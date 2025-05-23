@@ -31,14 +31,14 @@ int main(char* argc, char** argv) {
   snprintf(q1, 1000, "SELECT * FROM USERS where name = \"%s\"", name1);
 
   stmt = con->createStatement();
-  stmt->execute(q1); // dcexpect Sqli
+  stmt->execute(q1); // SQL Injection vulnerability here
   delete stmt;
 
   char *name2 = argv[2];
   char q2[1000] = {0};
   snprintf(q2, 1000, "SELECT * FROM USERS where name = \"%s\"", name2);
 
-  pstmt = con->prepareStatement(q2); // dcexpect Sqli
+  pstmt = con->prepareStatement(q2); // SQL Injection vulnerability here
   res = pstmt->executeQuery();
 
   return 0;
