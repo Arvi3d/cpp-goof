@@ -2,43 +2,52 @@
 The following is a valid C++ code example that demonstrates a SQL injection vulnerability using the SQLite C API. This code takes user input and directly concatenates it into an SQL query string, making it susceptible to SQL injection attacks
 */
 
+#include <stdlib.h>
 #include <iostream>
-#include <cstring>
-#include <sqlite3.h>
+#include "mysql_connection.h"
+#include <cppconn/driver.h>
+#include <cppconn/exception.h>
+#include <cppconn/resultset.h>
+#include <cppconn/statement.h>
+#include <cppconn/prepared_statement.h>
 
-void vulnerable_query(sqlite3 *db) {
-    char userName[100];
-    char itemName[100];
-    char sql[300] = "SELECT * FROM items WHERE owner = '";
+using namespace std;
 
-    // Get user input (unsafe)
-    std::cout << "Enter owner name: ";
-    std::cin.getline(userName, 100);
-    std::cout << "Enter item name: ";
-    std::cin.getline(itemName, 100);
+int main(char* argc, char** argv) {
+{
 
-    // Build SQL query by concatenating user input (vulnerable to SQL injection)
-    strcat(sql, userName);
-    strcat(sql, "' AND itemname = '");
-    strcat(sql, itemName);
-    strcat(sql, "'");
+  sql::Driver *driver;
+  sql::Connection *con;
+  sql::Statement *stmt;
+  sql::ResultSet *res;
+  sql::PreparedStatement *pstmt;
 
-    // Execute the SQL query
-    char *errMsg = nullptr;
-    int rc = sqlite3_exec(db, sql, nullptr, nullptr, &errMsg);
+  driver = get_driver_instance();
+  con = driver->connect("tcp://127.0.0.1:3306", "root", "root");
+  con->setSchema("test");
 
-    if (rc != SQLITE_OK) {
-        std::cerr << "SQL error: " << errMsg << std::endl;
-        sqlite3_free(errMsg);
-    } else {
-        std::cout << "Query executed: " << sql << std::endl;
-    }
+  char *name1 = argv[2];
+  char q1[1000] = {0};
+  snprintf(q1, 1000, "SELECT * FROM USERS where name = \"%s\"", name1);
+
+  stmt = con->createStatement();
+  stmt->execute(q1); // dcexpect Sqli
+  delete stmt;
+
+  char *name2 = argv[2];
+  char q2[1000] = {0};
+  snprintf(q2, 1000, "SELECT * FROM USERS where name = \"%s\"", name2);
+
+  pstmt = con->prepareStatement(q2); // dcexpect Sqli
+  res = pstmt->executeQuery();
+
+  return 0;
 }
 
 /*
 How to exploit:
 If user enters username as "admin' OR '1'='1", the SQL query becomes:
-SELECT * FROM items WHERE owner = 'admin' OR '1'='1';
+SELECT * FROM USERS WHERE name = 'admin' OR '1'='1';
 This would return all users in the database, effectively bypassing authentication.
 
 Mitigation:
