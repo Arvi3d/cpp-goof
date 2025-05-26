@@ -6,19 +6,19 @@ CXX = g++
 CXXFLAGS = -Wall -Wextra -g
 
 # Source files
-SRCS = src/buffer_overflow.cpp src/path_traversal.cpp src/sql_injection.cpp
+SRCS = src/buffer_overflow.cpp src/path_traversal.cpp src/sql_injection.cpp src/memory_leak.cpp
 OBJS = $(SRCS:.cpp=.o)
 EXES = $(SRCS:.cpp=)
 
 # Clang Static Analyzer settings
-SCAN_BUILD = scan-build
-SCAN_BUILD_FLAGS = -enable-checker security,core,unix,deadcode,cplusplus -v -V
-
-# Default target for direct g++ compilation (kept for reference or specific use)
-all-direct: $(EXES)
+SCAN_BUILD = /opt/homebrew/opt/llvm/bin/scan-build
+SCAN_BUILD_FLAGS = --status-bugs -enable-checker security,core,unix,deadcode,cplusplus -v -V
 
 # Default target now points to CMake build
 all: build-cmake
+
+# Target for direct g++ compilation (kept for reference or specific use)
+all-direct: $(EXES)
 
 # Rule for building executables
 %: %.cpp
@@ -65,10 +65,10 @@ install-clang-analyzer:
 
 # Clang Static Analyzer section
 .PHONY: clang-analyze
-clang-analyze: install-clang-analyzer
-	@echo "Running Clang Static Analyzer..."
+clang-analyze: install-clang-analyzer cmake-configure
+	@echo "Running Clang Static Analyzer on CMake build..."
 	mkdir -p scan-build-results
-	$(SCAN_BUILD) $(SCAN_BUILD_FLAGS) -o scan-build-results $(CXX) $(CXXFLAGS) $(SRCS)
+	cd build && $(SCAN_BUILD) $(SCAN_BUILD_FLAGS) -o ../scan-build-results cmake -H. -Bbuild .
 	@echo "Analysis complete. Results saved in scan-build-results directory."
 
 # Install project dependencies (CMake, Conan) on macOS
@@ -99,12 +99,18 @@ conan-install: install-deps
 	@echo "Installing Conan dependencies..."
 	conan install . --output-folder=build --build=missing --settings=build_type=Debug # Or Release
 
-# CMake build target
-.PHONY: build-cmake
-build-cmake: conan-install
-	@echo "Configuring and building with CMake..."
+# CMake configure-only target
+.PHONY: cmake-configure
+cmake-configure: conan-install
+	@echo "Configuring with CMake..."
 	mkdir -p build
 	cd build && cmake .. -DCMAKE_TOOLCHAIN_FILE=build/Debug/generators/conan_toolchain.cmake -DCMAKE_BUILD_TYPE=Debug
+	@echo "CMake configuration complete."
+
+# CMake build target
+.PHONY: build-cmake
+build-cmake: cmake-configure
+	@echo "Building with CMake..."
 	cd build && cmake --build .
 	@echo "CMake build complete. Executables are in the build/ directory."
 

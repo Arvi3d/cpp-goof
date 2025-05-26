@@ -14,6 +14,7 @@ find_package(SQLite3 REQUIRED) # Added for SQLite
 add_executable(buffer_overflow src/buffer_overflow.cpp)
 add_executable(path_traversal src/path_traversal.cpp)
 add_executable(sql_injection src/sql_injection.cpp)
+add_executable(memory_leak src/memory_leak.cpp)
 target_link_libraries(sql_injection PRIVATE SQLite::SQLite3) # Link to SQLite
 
 # Optional: If you want to link libraries, you can use target_link_libraries()
