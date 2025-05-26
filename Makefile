@@ -6,7 +6,7 @@ CXX = g++
 CXXFLAGS = -Wall -Wextra -g
 
 # Source files
-SRCS = buffer_overflow.cpp path_traversal_vuln.cpp sql_injection_vuln.cpp
+SRCS = src/buffer_overflow.cpp src/path_traversal.cpp src/sql_injection.cpp
 OBJS = $(SRCS:.cpp=.o)
 EXES = $(SRCS:.cpp=)
 
@@ -14,8 +14,11 @@ EXES = $(SRCS:.cpp=)
 SCAN_BUILD = scan-build
 SCAN_BUILD_FLAGS = -enable-checker security,core,unix,deadcode,cplusplus -v -V
 
-# Default target
-all: $(EXES)
+# Default target for direct g++ compilation (kept for reference or specific use)
+all-direct: $(EXES)
+
+# Default target now points to CMake build
+all: build-cmake
 
 # Rule for building executables
 %: %.cpp
@@ -25,6 +28,7 @@ all: $(EXES)
 clean:
 	rm -f $(OBJS) $(EXES)
 	rm -rf scan-build-results
+	rm -rf build
 
 # Snyk security testing section
 .PHONY: snyk-test
@@ -37,14 +41,6 @@ snyk-test:
 		echo "Using system Snyk installation..."; \
 		snyk code test; \
 	fi
-
-# Clang Static Analyzer section
-.PHONY: clang-analyze
-clang-analyze:
-	@echo "Running Clang Static Analyzer..."
-	mkdir -p scan-build-results
-	$(SCAN_BUILD) $(SCAN_BUILD_FLAGS) -o scan-build-results $(CXX) $(CXXFLAGS) $(SRCS)
-	@echo "Analysis complete. Results saved in scan-build-results directory."
 
 # Run all security tests
 .PHONY: security-check
@@ -61,10 +57,32 @@ install-clang-analyzer:
 	fi
 	brew update
 	brew install llvm
+	export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 	@echo "Clang Static Analyzer installed successfully."
 	@echo "Make sure LLVM tools are in your PATH by adding the following to your shell profile:"
 	@echo "export PATH=\"/usr/local/opt/llvm/bin:\$PATH\""
 	@echo "For Apple Silicon Macs, use: export PATH=\"/opt/homebrew/opt/llvm/bin:\$PATH\""
+
+# Clang Static Analyzer section
+.PHONY: clang-analyze
+clang-analyze: install-clang-analyzer
+	@echo "Running Clang Static Analyzer..."
+	mkdir -p scan-build-results
+	$(SCAN_BUILD) $(SCAN_BUILD_FLAGS) -o scan-build-results $(CXX) $(CXXFLAGS) $(SRCS)
+	@echo "Analysis complete. Results saved in scan-build-results directory."
+
+# Install project dependencies (CMake, Conan) on macOS
+.PHONY: install-deps
+install-deps:
+	@echo "Installing CMake on macOS..."
+	@if ! command -v brew &> /dev/null; then \
+		echo "Homebrew not found. Installing Homebrew..."; \
+		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"; \
+	fi
+	brew update
+	brew install cmake
+	brew install conan
+	@echo "CMake and Conan installed successfully (or already present)."
 
 # Install Snyk binary locally
 .PHONY: install-snyk
@@ -74,6 +92,26 @@ install-snyk:
 	chmod +x ./snyk
 	@echo "Snyk CLI installed successfully in the current directory."
 	@echo "You can run Snyk using ./snyk instead of snyk in your commands."
+
+# Conan install target
+.PHONY: conan-install
+conan-install: install-deps
+	@echo "Installing Conan dependencies..."
+	conan install . --output-folder=build --build=missing --settings=build_type=Debug # Or Release
+
+# CMake build target
+.PHONY: build-cmake
+build-cmake: conan-install
+	@echo "Configuring and building with CMake..."
+	mkdir -p build
+	cd build && cmake .. -DCMAKE_TOOLCHAIN_FILE=build/Debug/generators/conan_toolchain.cmake -DCMAKE_BUILD_TYPE=Debug
+	cd build && cmake --build .
+	@echo "CMake build complete. Executables are in the build/ directory."
+
+# Clean CMake build artifacts
+.PHONY: clean-cmake
+clean-cmake:
+	rm -rf build
 
 # Help target
 .PHONY: help
@@ -86,3 +124,7 @@ help:
 	@echo "  security-check       - Run all security checks"
 	@echo "  install-clang-analyzer - Install Clang Static Analyzer on macOS"
 	@echo "  install-snyk         - Download and install Snyk CLI locally"
+	@echo "  install-deps         - Install project dependencies (CMake, Conan) using Homebrew and pip"
+	@echo "  conan-install        - Install dependencies using Conan"
+	@echo "  build-cmake          - Build the project using CMake and Conan"
+	@echo "  clean-cmake          - Remove CMake build artifacts"
