@@ -20,6 +20,7 @@ add_executable(memory_leak_loop src/memory_leak_loop.cpp)
 add_executable(resource_leak_file src/resource_leak_file.cpp)
 add_executable(resource_leak_socket src/resource_leak_socket.cpp)
 add_executable(null_pointer_dereference src/null_pointer_dereference.cpp)
+add_executable(dangling_pointer src/dangling_pointer.cpp)
 target_link_libraries(sql_injection PRIVATE SQLite::SQLite3) # Link to SQLite
 
 # Optional: If you want to link libraries, you can use target_link_libraries()
