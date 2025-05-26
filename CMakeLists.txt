@@ -23,6 +23,9 @@ add_executable(null_pointer_dereference src/null_pointer_dereference.cpp)
 add_executable(dangling_pointer src/dangling_pointer.cpp)
 add_executable(integer_overflow_signed src/integer_overflow_signed.cpp)
 add_executable(integer_overflow_unsigned src/integer_overflow_unsigned.cpp)
+add_executable(double_free_direct src/double_free_direct.cpp)
+add_executable(double_free_aliased_pointer src/double_free_aliased_pointer.cpp)
+add_executable(double_free_function src/double_free_function.cpp)
 target_link_libraries(sql_injection PRIVATE SQLite::SQLite3) # Link to SQLite
 
 # Optional: If you want to link libraries, you can use target_link_libraries()
