@@ -6,6 +6,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 find_package(SQLite3 REQUIRED) # Added for SQLite
+find_package(Threads REQUIRED)
 
 # CMAKE_TOOLCHAIN_FILE is now set via the command line in the Makefile
 # set(CMAKE_TOOLCHAIN_FILE ${CMAKE_BINARY_DIR}/conan_toolchain.cmake) # This line is commented out
@@ -26,7 +27,13 @@ add_executable(integer_overflow_unsigned src/integer_overflow_unsigned.cpp)
 add_executable(double_free_direct src/double_free_direct.cpp)
 add_executable(double_free_aliased_pointer src/double_free_aliased_pointer.cpp)
 add_executable(double_free_function src/double_free_function.cpp)
+add_executable(concurrency_race_condition src/concurrency_race_condition.cpp)
+add_executable(concurrency_deadlock src/concurrency_deadlock.cpp)
+add_executable(concurrency_atomicity_violation src/concurrency_atomicity_violation.cpp)
 target_link_libraries(sql_injection PRIVATE SQLite::SQLite3) # Link to SQLite
+target_link_libraries(concurrency_race_condition PRIVATE Threads::Threads)
+target_link_libraries(concurrency_deadlock PRIVATE Threads::Threads)
+target_link_libraries(concurrency_atomicity_violation PRIVATE Threads::Threads)
 
 # Optional: If you want to link libraries, you can use target_link_libraries()
 # Example: target_link_libraries(my_executable PRIVATE my_library)
