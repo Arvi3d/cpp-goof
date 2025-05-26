@@ -30,6 +30,7 @@ add_executable(double_free_function src/double_free_function.cpp)
 add_executable(concurrency_race_condition src/concurrency_race_condition.cpp)
 add_executable(concurrency_deadlock src/concurrency_deadlock.cpp)
 add_executable(concurrency_atomicity_violation src/concurrency_atomicity_violation.cpp)
+add_executable(uninitialized_variable src/uninitialized_variable.cpp)
 target_link_libraries(sql_injection PRIVATE SQLite::SQLite3) # Link to SQLite
 target_link_libraries(concurrency_race_condition PRIVATE Threads::Threads)
 target_link_libraries(concurrency_deadlock PRIVATE Threads::Threads)
