@@ -33,6 +33,10 @@ add_executable(concurrency_atomicity_violation src/concurrency_atomicity_violati
 add_executable(uninitialized_variable src/uninitialized_variable.cpp)
 add_executable(command_injection src/command_injection.cpp)
 add_executable(format_string src/format_string.cpp)
+add_executable(incorrect_typecon_narrowing src/incorrect_typecon_narrowing.cpp)
+add_executable(incorrect_typecon_signed src/incorrect_typecon_signed.cpp)
+add_executable(incorrect_typecon_pointer src/incorrect_typecon_pointer.cpp)
+add_executable(incorrect_typecon_unsafe_c src/incorrect_typecon_unsafe_c.cpp)
 target_link_libraries(sql_injection PRIVATE SQLite::SQLite3) # Link to SQLite
 target_link_libraries(concurrency_race_condition PRIVATE Threads::Threads)
 target_link_libraries(concurrency_deadlock PRIVATE Threads::Threads)
