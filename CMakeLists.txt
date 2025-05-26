@@ -37,6 +37,8 @@ add_executable(incorrect_typecon_narrowing src/incorrect_typecon_narrowing.cpp)
 add_executable(incorrect_typecon_signed src/incorrect_typecon_signed.cpp)
 add_executable(incorrect_typecon_pointer src/incorrect_typecon_pointer.cpp)
 add_executable(incorrect_typecon_unsafe_c src/incorrect_typecon_unsafe_c.cpp)
+add_executable(division_zero_int src/division_zero_int.cpp)
+add_executable(division_zero_double src/division_zero_double.cpp)
 target_link_libraries(sql_injection PRIVATE SQLite::SQLite3) # Link to SQLite
 target_link_libraries(concurrency_race_condition PRIVATE Threads::Threads)
 target_link_libraries(concurrency_deadlock PRIVATE Threads::Threads)
