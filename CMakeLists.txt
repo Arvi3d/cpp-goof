@@ -7,6 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 find_package(SQLite3 REQUIRED) # Added for SQLite
 find_package(Threads REQUIRED)
+find_package(OpenSSL REQUIRED)
 
 # CMAKE_TOOLCHAIN_FILE is now set via the command line in the Makefile
 # set(CMAKE_TOOLCHAIN_FILE ${CMAKE_BINARY_DIR}/conan_toolchain.cmake) # This line is commented out
@@ -39,10 +40,14 @@ add_executable(incorrect_typecon_pointer src/incorrect_typecon_pointer.cpp)
 add_executable(incorrect_typecon_unsafe_c src/incorrect_typecon_unsafe_c.cpp)
 add_executable(division_zero_int src/division_zero_int.cpp)
 add_executable(division_zero_double src/division_zero_double.cpp)
+add_executable(cryptography_hardcoded_iv src/cryptography_hardcoded_iv.cpp)
+add_executable(cryptography_ecb_mode src/cryptography_ecb_mode.cpp)
 target_link_libraries(sql_injection PRIVATE SQLite::SQLite3) # Link to SQLite
 target_link_libraries(concurrency_race_condition PRIVATE Threads::Threads)
 target_link_libraries(concurrency_deadlock PRIVATE Threads::Threads)
 target_link_libraries(concurrency_atomicity_violation PRIVATE Threads::Threads)
+target_link_libraries(cryptography_hardcoded_iv PRIVATE OpenSSL::SSL OpenSSL::Crypto)
+target_link_libraries(cryptography_ecb_mode PRIVATE OpenSSL::SSL OpenSSL::Crypto)
 
 # Optional: If you want to link libraries, you can use target_link_libraries()
 # Example: target_link_libraries(my_executable PRIVATE my_library)

@@ -1,5 +1,6 @@
 [requires]
 sqlite3/3.45.3
+openssl/3.2.1
 
 [generators]
 CMakeDeps
