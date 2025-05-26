@@ -6,7 +6,7 @@ CXX = g++
 CXXFLAGS = -Wall -Wextra -g
 
 # Source files
-SRCS = src/buffer_overflow.cpp src/path_traversal.cpp src/sql_injection.cpp src/memory_leak.cpp
+SRCS = src/buffer_overflow.cpp src/path_traversal.cpp src/sql_injection.cpp src/memory_leak_delete.cpp src/memory_leak_destructor.cpp src/memory_leak_loop.cpp
 OBJS = $(SRCS:.cpp=.o)
 EXES = $(SRCS:.cpp=)
 
