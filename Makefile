@@ -68,7 +68,10 @@ install-clang-analyzer:
 clang-analyze: install-clang-analyzer cmake-configure
 	@echo "Running Clang Static Analyzer on CMake build..."
 	mkdir -p scan-build-results
-	cd build && $(SCAN_BUILD) $(SCAN_BUILD_FLAGS) -o ../scan-build-results cmake -H. -Bbuild .
+	
+	$(SCAN_BUILD) cmake . -Bbuild
+	$(SCAN_BUILD) -o ./scan-build-results cmake --build ./build -j32
+	
 	@echo "Analysis complete. Results saved in scan-build-results directory."
 
 # Install project dependencies (CMake, Conan) on macOS
