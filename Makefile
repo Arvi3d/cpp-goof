@@ -69,9 +69,9 @@ clang-analyze: install-clang-analyzer cmake-configure
 	@echo "Running Clang Static Analyzer on CMake build..."
 	mkdir -p scan-build-results
 	rm -rf build
-	
-	$(SCAN_BUILD) --use-cc=clang --use-c++=clang++ cmake -H. -Bbuild
-	$(SCAN_BUILD) -o ./scan-build-results --use-cc=clang --use-c++=clang++ make -C build -j2
+
+	cmake . -Bbuild -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+	analyze-build -o ./scan-build-results --cdb ./build/compile_commands.json
 
 	@echo "Analysis complete. Results saved in scan-build-results directory."
 
@@ -86,6 +86,8 @@ install-deps:
 	brew update
 	brew install cmake
 	brew install conan
+	brew install pipx
+	pipx install scan-build
 	@echo "CMake and Conan installed successfully (or already present)."
 
 # Install Snyk binary locally
