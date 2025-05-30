@@ -88,8 +88,6 @@ install-deps:
 	brew update
 	brew install cmake
 	brew install conan
-	brew install pipx
-	pipx install scan-build
 	@echo "CMake and Conan installed successfully (or already present)."
 
 # Install Snyk binary locally
