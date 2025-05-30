@@ -12,7 +12,11 @@ find_package(OpenSSL REQUIRED)
 # CMAKE_TOOLCHAIN_FILE is now set via the command line in the Makefile
 # set(CMAKE_TOOLCHAIN_FILE ${CMAKE_BINARY_DIR}/conan_toolchain.cmake) # This line is commented out
 
+# Add source files as libraries to test analysis between Translation Units
+# add_library(buffer_overflow_library src/buffer_overflow_library.cpp)
+
 # Add source files as executables (assuming they are in the project root)
+
 add_executable(buffer_overflow src/buffer_overflow.cpp)
 add_executable(path_traversal src/path_traversal.cpp)
 add_executable(sql_injection src/sql_injection.cpp)
