@@ -11,7 +11,7 @@ OBJS = $(SRCS:.cpp=.o)
 EXES = $(SRCS:.cpp=)
 
 # Clang Static Analyzer settings
-SCAN_BUILD = /opt/homebrew/opt/llvm/bin/scan-build
+SCAN_BUILD = /opt/homebrew/opt/llvm/bin/analyze-build
 SCAN_BUILD_FLAGS = --status-bugs -enable-checker security,core,unix,deadcode,cplusplus -v -V
 
 # Default target now points to CMake build
@@ -57,6 +57,8 @@ install-clang-analyzer:
 	fi
 	brew update
 	brew install llvm
+	brew install pipx
+	pipx install scan-build
 	export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 	@echo "Clang Static Analyzer installed successfully."
 	@echo "Make sure LLVM tools are in your PATH by adding the following to your shell profile:"
@@ -69,9 +71,9 @@ clang-analyze: install-clang-analyzer cmake-configure
 	@echo "Running Clang Static Analyzer on CMake build..."
 	mkdir -p scan-build-results
 	rm -rf build
-
+	
 	cmake . -Bbuild -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
-	analyze-build -o ./scan-build-results --cdb ./build/compile_commands.json
+	$(SCAN_BUILD) -o ./scan-build-results --cdb ./build/compile_commands.json
 
 	@echo "Analysis complete. Results saved in scan-build-results directory."
 
