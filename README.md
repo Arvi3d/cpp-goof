@@ -48,8 +48,8 @@ Unrelated to specific vulnerabilities, SAST engine must be able to detect path s
 
 | Issue | Snyk | CSA |
 | :--------------------------- | :--- | :-- |
-| [Use After Free (Path Sens.) - True positive](src/dangling_pointer_path_sensitive.cpp) | [Yes](https://app.eu.snyk.io/org/code/project/944d1d2c-20a4-4890-9287-eb06f4ef5fbe#issue-24b6cace-4b3b-4a2b-8e17-5666f9298d1c) | No |
-| [Use After Free (Path Sens.) - False positive](src/dangling_pointer_path_sensitive.cpp) | [Yes](https://app.eu.snyk.io/org/code/project/944d1d2c-20a4-4890-9287-eb06f4ef5fbe#issue-f7071dca-c8c2-455c-b7c1-723f370093b5) | No |
-| [Null Pointer Deref. (Path Sens.) - False positive](src/null_pointer_dereference_path_sensitive.cpp) | No | No |
-| [Uninitialized Variable (Path Sens.) - False positive](src/unitialized_variable_path_sensitive.cpp) | No | No |
+| [Use After Free - True positive](src/dangling_pointer_path_sensitive.cpp) | [Yes](https://app.eu.snyk.io/org/code/project/944d1d2c-20a4-4890-9287-eb06f4ef5fbe#issue-24b6cace-4b3b-4a2b-8e17-5666f9298d1c) | No |
+| [Use After Free - False positive](src/dangling_pointer_path_sensitive.cpp) | [Yes](https://app.eu.snyk.io/org/code/project/944d1d2c-20a4-4890-9287-eb06f4ef5fbe#issue-f7071dca-c8c2-455c-b7c1-723f370093b5) | No |
+| [Null Pointer Deref. - False positive](src/null_pointer_dereference_path_sensitive.cpp) | No | No |
+| [Uninitialized Variable - False positive](src/unitialized_variable_path_sensitive.cpp) | No | No |
 
