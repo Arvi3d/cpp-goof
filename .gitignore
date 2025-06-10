@@ -2,4 +2,3 @@
 /snyk
 .dccache
 build/
-/scan-build-results/**

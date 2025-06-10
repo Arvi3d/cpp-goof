@@ -1,0 +1,176 @@
+[
+{
+  "directory": "/Users/arvid/Documents/workspace/cpp-goof/build",
+  "command": "/usr/bin/c++   -std=gnu++17 -arch arm64 -o CMakeFiles/buffer_overflow.dir/src/buffer_overflow.cpp.o -c /Users/arvid/Documents/workspace/cpp-goof/src/buffer_overflow.cpp",
+  "file": "/Users/arvid/Documents/workspace/cpp-goof/src/buffer_overflow.cpp",
+  "output": "CMakeFiles/buffer_overflow.dir/src/buffer_overflow.cpp.o"
+},
+{
+  "directory": "/Users/arvid/Documents/workspace/cpp-goof/build",
+  "command": "/usr/bin/c++   -std=gnu++17 -arch arm64 -o CMakeFiles/path_traversal.dir/src/path_traversal.cpp.o -c /Users/arvid/Documents/workspace/cpp-goof/src/path_traversal.cpp",
+  "file": "/Users/arvid/Documents/workspace/cpp-goof/src/path_traversal.cpp",
+  "output": "CMakeFiles/path_traversal.dir/src/path_traversal.cpp.o"
+},
+{
+  "directory": "/Users/arvid/Documents/workspace/cpp-goof/build",
+  "command": "/usr/bin/c++   -std=gnu++17 -arch arm64 -o CMakeFiles/sql_injection.dir/src/sql_injection.cpp.o -c /Users/arvid/Documents/workspace/cpp-goof/src/sql_injection.cpp",
+  "file": "/Users/arvid/Documents/workspace/cpp-goof/src/sql_injection.cpp",
+  "output": "CMakeFiles/sql_injection.dir/src/sql_injection.cpp.o"
+},
+{
+  "directory": "/Users/arvid/Documents/workspace/cpp-goof/build",
+  "command": "/usr/bin/c++   -std=gnu++17 -arch arm64 -o CMakeFiles/memory_leak_delete.dir/src/memory_leak_delete.cpp.o -c /Users/arvid/Documents/workspace/cpp-goof/src/memory_leak_delete.cpp",
+  "file": "/Users/arvid/Documents/workspace/cpp-goof/src/memory_leak_delete.cpp",
+  "output": "CMakeFiles/memory_leak_delete.dir/src/memory_leak_delete.cpp.o"
+},
+{
+  "directory": "/Users/arvid/Documents/workspace/cpp-goof/build",
+  "command": "/usr/bin/c++   -std=gnu++17 -arch arm64 -o CMakeFiles/memory_leak_destructor.dir/src/memory_leak_destructor.cpp.o -c /Users/arvid/Documents/workspace/cpp-goof/src/memory_leak_destructor.cpp",
+  "file": "/Users/arvid/Documents/workspace/cpp-goof/src/memory_leak_destructor.cpp",
+  "output": "CMakeFiles/memory_leak_destructor.dir/src/memory_leak_destructor.cpp.o"
+},
+{
+  "directory": "/Users/arvid/Documents/workspace/cpp-goof/build",
+  "command": "/usr/bin/c++   -std=gnu++17 -arch arm64 -o CMakeFiles/memory_leak_loop.dir/src/memory_leak_loop.cpp.o -c /Users/arvid/Documents/workspace/cpp-goof/src/memory_leak_loop.cpp",
+  "file": "/Users/arvid/Documents/workspace/cpp-goof/src/memory_leak_loop.cpp",
+  "output": "CMakeFiles/memory_leak_loop.dir/src/memory_leak_loop.cpp.o"
+},
+{
+  "directory": "/Users/arvid/Documents/workspace/cpp-goof/build",
+  "command": "/usr/bin/c++   -std=gnu++17 -arch arm64 -o CMakeFiles/resource_leak_file.dir/src/resource_leak_file.cpp.o -c /Users/arvid/Documents/workspace/cpp-goof/src/resource_leak_file.cpp",
+  "file": "/Users/arvid/Documents/workspace/cpp-goof/src/resource_leak_file.cpp",
+  "output": "CMakeFiles/resource_leak_file.dir/src/resource_leak_file.cpp.o"
+},
+{
+  "directory": "/Users/arvid/Documents/workspace/cpp-goof/build",
+  "command": "/usr/bin/c++   -std=gnu++17 -arch arm64 -o CMakeFiles/resource_leak_socket.dir/src/resource_leak_socket.cpp.o -c /Users/arvid/Documents/workspace/cpp-goof/src/resource_leak_socket.cpp",
+  "file": "/Users/arvid/Documents/workspace/cpp-goof/src/resource_leak_socket.cpp",
+  "output": "CMakeFiles/resource_leak_socket.dir/src/resource_leak_socket.cpp.o"
+},
+{
+  "directory": "/Users/arvid/Documents/workspace/cpp-goof/build",
+  "command": "/usr/bin/c++   -std=gnu++17 -arch arm64 -o CMakeFiles/null_pointer_dereference.dir/src/null_pointer_dereference.cpp.o -c /Users/arvid/Documents/workspace/cpp-goof/src/null_pointer_dereference.cpp",
+  "file": "/Users/arvid/Documents/workspace/cpp-goof/src/null_pointer_dereference.cpp",
+  "output": "CMakeFiles/null_pointer_dereference.dir/src/null_pointer_dereference.cpp.o"
+},
+{
+  "directory": "/Users/arvid/Documents/workspace/cpp-goof/build",
+  "command": "/usr/bin/c++   -std=gnu++17 -arch arm64 -o CMakeFiles/dangling_pointer.dir/src/dangling_pointer.cpp.o -c /Users/arvid/Documents/workspace/cpp-goof/src/dangling_pointer.cpp",
+  "file": "/Users/arvid/Documents/workspace/cpp-goof/src/dangling_pointer.cpp",
+  "output": "CMakeFiles/dangling_pointer.dir/src/dangling_pointer.cpp.o"
+},
+{
+  "directory": "/Users/arvid/Documents/workspace/cpp-goof/build",
+  "command": "/usr/bin/c++   -std=gnu++17 -arch arm64 -o CMakeFiles/integer_overflow_signed.dir/src/integer_overflow_signed.cpp.o -c /Users/arvid/Documents/workspace/cpp-goof/src/integer_overflow_signed.cpp",
+  "file": "/Users/arvid/Documents/workspace/cpp-goof/src/integer_overflow_signed.cpp",
+  "output": "CMakeFiles/integer_overflow_signed.dir/src/integer_overflow_signed.cpp.o"
+},
+{
+  "directory": "/Users/arvid/Documents/workspace/cpp-goof/build",
+  "command": "/usr/bin/c++   -std=gnu++17 -arch arm64 -o CMakeFiles/integer_overflow_unsigned.dir/src/integer_overflow_unsigned.cpp.o -c /Users/arvid/Documents/workspace/cpp-goof/src/integer_overflow_unsigned.cpp",
+  "file": "/Users/arvid/Documents/workspace/cpp-goof/src/integer_overflow_unsigned.cpp",
+  "output": "CMakeFiles/integer_overflow_unsigned.dir/src/integer_overflow_unsigned.cpp.o"
+},
+{
+  "directory": "/Users/arvid/Documents/workspace/cpp-goof/build",
+  "command": "/usr/bin/c++   -std=gnu++17 -arch arm64 -o CMakeFiles/double_free_direct.dir/src/double_free_direct.cpp.o -c /Users/arvid/Documents/workspace/cpp-goof/src/double_free_direct.cpp",
+  "file": "/Users/arvid/Documents/workspace/cpp-goof/src/double_free_direct.cpp",
+  "output": "CMakeFiles/double_free_direct.dir/src/double_free_direct.cpp.o"
+},
+{
+  "directory": "/Users/arvid/Documents/workspace/cpp-goof/build",
+  "command": "/usr/bin/c++   -std=gnu++17 -arch arm64 -o CMakeFiles/double_free_aliased_pointer.dir/src/double_free_aliased_pointer.cpp.o -c /Users/arvid/Documents/workspace/cpp-goof/src/double_free_aliased_pointer.cpp",
+  "file": "/Users/arvid/Documents/workspace/cpp-goof/src/double_free_aliased_pointer.cpp",
+  "output": "CMakeFiles/double_free_aliased_pointer.dir/src/double_free_aliased_pointer.cpp.o"
+},
+{
+  "directory": "/Users/arvid/Documents/workspace/cpp-goof/build",
+  "command": "/usr/bin/c++   -std=gnu++17 -arch arm64 -o CMakeFiles/double_free_function.dir/src/double_free_function.cpp.o -c /Users/arvid/Documents/workspace/cpp-goof/src/double_free_function.cpp",
+  "file": "/Users/arvid/Documents/workspace/cpp-goof/src/double_free_function.cpp",
+  "output": "CMakeFiles/double_free_function.dir/src/double_free_function.cpp.o"
+},
+{
+  "directory": "/Users/arvid/Documents/workspace/cpp-goof/build",
+  "command": "/usr/bin/c++   -std=gnu++17 -arch arm64 -o CMakeFiles/concurrency_race_condition.dir/src/concurrency_race_condition.cpp.o -c /Users/arvid/Documents/workspace/cpp-goof/src/concurrency_race_condition.cpp",
+  "file": "/Users/arvid/Documents/workspace/cpp-goof/src/concurrency_race_condition.cpp",
+  "output": "CMakeFiles/concurrency_race_condition.dir/src/concurrency_race_condition.cpp.o"
+},
+{
+  "directory": "/Users/arvid/Documents/workspace/cpp-goof/build",
+  "command": "/usr/bin/c++   -std=gnu++17 -arch arm64 -o CMakeFiles/concurrency_deadlock.dir/src/concurrency_deadlock.cpp.o -c /Users/arvid/Documents/workspace/cpp-goof/src/concurrency_deadlock.cpp",
+  "file": "/Users/arvid/Documents/workspace/cpp-goof/src/concurrency_deadlock.cpp",
+  "output": "CMakeFiles/concurrency_deadlock.dir/src/concurrency_deadlock.cpp.o"
+},
+{
+  "directory": "/Users/arvid/Documents/workspace/cpp-goof/build",
+  "command": "/usr/bin/c++   -std=gnu++17 -arch arm64 -o CMakeFiles/concurrency_atomicity_violation.dir/src/concurrency_atomicity_violation.cpp.o -c /Users/arvid/Documents/workspace/cpp-goof/src/concurrency_atomicity_violation.cpp",
+  "file": "/Users/arvid/Documents/workspace/cpp-goof/src/concurrency_atomicity_violation.cpp",
+  "output": "CMakeFiles/concurrency_atomicity_violation.dir/src/concurrency_atomicity_violation.cpp.o"
+},
+{
+  "directory": "/Users/arvid/Documents/workspace/cpp-goof/build",
+  "command": "/usr/bin/c++   -std=gnu++17 -arch arm64 -o CMakeFiles/uninitialized_variable.dir/src/uninitialized_variable.cpp.o -c /Users/arvid/Documents/workspace/cpp-goof/src/uninitialized_variable.cpp",
+  "file": "/Users/arvid/Documents/workspace/cpp-goof/src/uninitialized_variable.cpp",
+  "output": "CMakeFiles/uninitialized_variable.dir/src/uninitialized_variable.cpp.o"
+},
+{
+  "directory": "/Users/arvid/Documents/workspace/cpp-goof/build",
+  "command": "/usr/bin/c++   -std=gnu++17 -arch arm64 -o CMakeFiles/command_injection.dir/src/command_injection.cpp.o -c /Users/arvid/Documents/workspace/cpp-goof/src/command_injection.cpp",
+  "file": "/Users/arvid/Documents/workspace/cpp-goof/src/command_injection.cpp",
+  "output": "CMakeFiles/command_injection.dir/src/command_injection.cpp.o"
+},
+{
+  "directory": "/Users/arvid/Documents/workspace/cpp-goof/build",
+  "command": "/usr/bin/c++   -std=gnu++17 -arch arm64 -o CMakeFiles/format_string.dir/src/format_string.cpp.o -c /Users/arvid/Documents/workspace/cpp-goof/src/format_string.cpp",
+  "file": "/Users/arvid/Documents/workspace/cpp-goof/src/format_string.cpp",
+  "output": "CMakeFiles/format_string.dir/src/format_string.cpp.o"
+},
+{
+  "directory": "/Users/arvid/Documents/workspace/cpp-goof/build",
+  "command": "/usr/bin/c++   -std=gnu++17 -arch arm64 -o CMakeFiles/incorrect_typecon_narrowing.dir/src/incorrect_typecon_narrowing.cpp.o -c /Users/arvid/Documents/workspace/cpp-goof/src/incorrect_typecon_narrowing.cpp",
+  "file": "/Users/arvid/Documents/workspace/cpp-goof/src/incorrect_typecon_narrowing.cpp",
+  "output": "CMakeFiles/incorrect_typecon_narrowing.dir/src/incorrect_typecon_narrowing.cpp.o"
+},
+{
+  "directory": "/Users/arvid/Documents/workspace/cpp-goof/build",
+  "command": "/usr/bin/c++   -std=gnu++17 -arch arm64 -o CMakeFiles/incorrect_typecon_signed.dir/src/incorrect_typecon_signed.cpp.o -c /Users/arvid/Documents/workspace/cpp-goof/src/incorrect_typecon_signed.cpp",
+  "file": "/Users/arvid/Documents/workspace/cpp-goof/src/incorrect_typecon_signed.cpp",
+  "output": "CMakeFiles/incorrect_typecon_signed.dir/src/incorrect_typecon_signed.cpp.o"
+},
+{
+  "directory": "/Users/arvid/Documents/workspace/cpp-goof/build",
+  "command": "/usr/bin/c++   -std=gnu++17 -arch arm64 -o CMakeFiles/incorrect_typecon_pointer.dir/src/incorrect_typecon_pointer.cpp.o -c /Users/arvid/Documents/workspace/cpp-goof/src/incorrect_typecon_pointer.cpp",
+  "file": "/Users/arvid/Documents/workspace/cpp-goof/src/incorrect_typecon_pointer.cpp",
+  "output": "CMakeFiles/incorrect_typecon_pointer.dir/src/incorrect_typecon_pointer.cpp.o"
+},
+{
+  "directory": "/Users/arvid/Documents/workspace/cpp-goof/build",
+  "command": "/usr/bin/c++   -std=gnu++17 -arch arm64 -o CMakeFiles/incorrect_typecon_unsafe_c.dir/src/incorrect_typecon_unsafe_c.cpp.o -c /Users/arvid/Documents/workspace/cpp-goof/src/incorrect_typecon_unsafe_c.cpp",
+  "file": "/Users/arvid/Documents/workspace/cpp-goof/src/incorrect_typecon_unsafe_c.cpp",
+  "output": "CMakeFiles/incorrect_typecon_unsafe_c.dir/src/incorrect_typecon_unsafe_c.cpp.o"
+},
+{
+  "directory": "/Users/arvid/Documents/workspace/cpp-goof/build",
+  "command": "/usr/bin/c++   -std=gnu++17 -arch arm64 -o CMakeFiles/division_zero_int.dir/src/division_zero_int.cpp.o -c /Users/arvid/Documents/workspace/cpp-goof/src/division_zero_int.cpp",
+  "file": "/Users/arvid/Documents/workspace/cpp-goof/src/division_zero_int.cpp",
+  "output": "CMakeFiles/division_zero_int.dir/src/division_zero_int.cpp.o"
+},
+{
+  "directory": "/Users/arvid/Documents/workspace/cpp-goof/build",
+  "command": "/usr/bin/c++   -std=gnu++17 -arch arm64 -o CMakeFiles/division_zero_double.dir/src/division_zero_double.cpp.o -c /Users/arvid/Documents/workspace/cpp-goof/src/division_zero_double.cpp",
+  "file": "/Users/arvid/Documents/workspace/cpp-goof/src/division_zero_double.cpp",
+  "output": "CMakeFiles/division_zero_double.dir/src/division_zero_double.cpp.o"
+},
+{
+  "directory": "/Users/arvid/Documents/workspace/cpp-goof/build",
+  "command": "/usr/bin/c++  -isystem /opt/homebrew/Cellar/openssl@3/3.5.0/include -std=gnu++17 -arch arm64 -o CMakeFiles/cryptography_hardcoded_iv.dir/src/cryptography_hardcoded_iv.cpp.o -c /Users/arvid/Documents/workspace/cpp-goof/src/cryptography_hardcoded_iv.cpp",
+  "file": "/Users/arvid/Documents/workspace/cpp-goof/src/cryptography_hardcoded_iv.cpp",
+  "output": "CMakeFiles/cryptography_hardcoded_iv.dir/src/cryptography_hardcoded_iv.cpp.o"
+},
+{
+  "directory": "/Users/arvid/Documents/workspace/cpp-goof/build",
+  "command": "/usr/bin/c++  -isystem /opt/homebrew/Cellar/openssl@3/3.5.0/include -std=gnu++17 -arch arm64 -o CMakeFiles/cryptography_ecb_mode.dir/src/cryptography_ecb_mode.cpp.o -c /Users/arvid/Documents/workspace/cpp-goof/src/cryptography_ecb_mode.cpp",
+  "file": "/Users/arvid/Documents/workspace/cpp-goof/src/cryptography_ecb_mode.cpp",
+  "output": "CMakeFiles/cryptography_ecb_mode.dir/src/cryptography_ecb_mode.cpp.o"
+}
+]

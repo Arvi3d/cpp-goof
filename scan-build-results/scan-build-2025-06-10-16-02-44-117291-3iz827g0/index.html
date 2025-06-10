@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>src - analyzer results</title>
+    <link type="text/css" rel="stylesheet" href="scanview.css"/>
+    <script type='text/javascript' src="sorttable.js"></script>
+    <script type='text/javascript' src='selectable.js'></script>
+  </head>
+<!-- SUMMARYENDHEAD -->
+  <body>
+    <h1>src - analyzer results</h1>
+    <table>
+      <tr><th>User:</th><td>arvid@Arvyds-MacBook-Pro.local</td></tr>
+      <tr><th>Working Directory:</th><td>/Users/arvid/Documents/workspace/cpp-goof/src</td></tr>
+      <tr><th>Command Line:</th><td>/opt/homebrew/opt/llvm/bin/analyze-build -o ./scan-build-results --cdb ./build/compile_commands.json</td></tr>
+      <tr><th>Clang Version:</th><td>Apple clang version 17.0.0 (clang-1700.0.13.5)</td></tr>
+      <tr><th>Date:</th><td>Tue Jun 10 16:02:48 2025</td></tr>
+    </table>
+    <h2>Bug Summary</h2>
+    <table>
+      <thead>
+        <tr>
+          <td>Bug Type</td>
+          <td>Quantity</td>
+          <td class="sorttable_nosort">Display?</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="font-weight:bold">
+          <td class="SUMM_DESC">All Bugs</td>
+          <td class="Q">9</td>
+          <td>
+            <center>
+              <input checked type="checkbox" id="AllBugsCheck"
+                     onClick="CopyCheckedStateToCheckButtons(this);"/>
+            </center>
+          </td>
+        </tr>
+        <tr>
+          <th>Unused code</th><th colspan=2></th>
+        </tr>
+        <tr>
+          <td class="SUMM_DESC">Dead initialization</td>
+          <td class="Q">3</td>
+          <td>
+            <center>
+              <input checked type="checkbox"
+                     onClick="ToggleDisplay(this,'bt_unused_code_dead_initialization');"/>
+            </center>
+          </td>
+        </tr>
+        <tr>
+          <th>Logic error</th><th colspan=2></th>
+        </tr>
+        <tr>
+          <td class="SUMM_DESC">Division by zero</td>
+          <td class="Q">1</td>
+          <td>
+            <center>
+              <input checked type="checkbox"
+                     onClick="ToggleDisplay(this,'bt_logic_error_division_by_zero');"/>
+            </center>
+          </td>
+        </tr>
+        <tr>
+          <th>Memory error</th><th colspan=2></th>
+        </tr>
+        <tr>
+          <td class="SUMM_DESC">Use-after-free</td>
+          <td class="Q">1</td>
+          <td>
+            <center>
+              <input checked type="checkbox"
+                     onClick="ToggleDisplay(this,'bt_memory_error_use-after-free');"/>
+            </center>
+          </td>
+        </tr>
+        <tr>
+          <td class="SUMM_DESC">Double free</td>
+          <td class="Q">2</td>
+          <td>
+            <center>
+              <input checked type="checkbox"
+                     onClick="ToggleDisplay(this,'bt_memory_error_double_free');"/>
+            </center>
+          </td>
+        </tr>
+        <tr>
+          <td class="SUMM_DESC">Memory leak</td>
+          <td class="Q">2</td>
+          <td>
+            <center>
+              <input checked type="checkbox"
+                     onClick="ToggleDisplay(this,'bt_memory_error_memory_leak');"/>
+            </center>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+<!-- SUMMARYBUGEND -->
+    <h2>Reports</h2>
+    <table class="sortable" style="table-layout:automatic">
+      <thead>
+        <tr>
+          <td>Bug Group</td>
+          <td class="sorttable_sorted">
+            Bug Type
+            <span id="sorttable_sortfwdind">&nbsp;&#x25BE;</span>
+          </td>
+          <td>File</td>
+          <td>Function/Method</td>
+          <td class="Q">Line</td>
+          <td class="Q">Path Length</td>
+          <td class="sorttable_nosort"></td>
+        </tr>
+      </thead>
+      <tbody>
+<!-- REPORTBUGCOL -->
+        <tr class="bt_unused_code_dead_initialization">
+          <td class="DESC">Unused code</td>
+          <td class="DESC">Dead initialization</td>
+          <td>memory_leak_delete.cpp</td>
+          <td class="DESC">demonstrate_leak</td>
+          <td class="Q">10</td>
+          <td class="Q">1</td>
+          <td><a href="report-6ca886.html#EndPath">View Report</a></td>
+        </tr>
+<!-- REPORTBUG id="report-6ca886.html" -->
+        <tr class="bt_logic_error_division_by_zero">
+          <td class="DESC">Logic error</td>
+          <td class="DESC">Division by zero</td>
+          <td>division_zero_int.cpp</td>
+          <td class="DESC">main</td>
+          <td class="Q">15</td>
+          <td class="Q">2</td>
+          <td><a href="report-4726a5.html#EndPath">View Report</a></td>
+        </tr>
+<!-- REPORTBUG id="report-4726a5.html" -->
+        <tr class="bt_memory_error_use-after-free">
+          <td class="DESC">Memory error</td>
+          <td class="DESC">Use-after-free</td>
+          <td>dangling_pointer.cpp</td>
+          <td class="DESC">use_after_free</td>
+          <td class="Q">18</td>
+          <td class="Q">4</td>
+          <td><a href="report-ce589f.html#EndPath">View Report</a></td>
+        </tr>
+<!-- REPORTBUG id="report-ce589f.html" -->
+        <tr class="bt_memory_error_double_free">
+          <td class="DESC">Memory error</td>
+          <td class="DESC">Double free</td>
+          <td>double_free_function.cpp</td>
+          <td class="DESC">main</td>
+          <td class="Q">24</td>
+          <td class="Q">5</td>
+          <td><a href="report-48b029.html#EndPath">View Report</a></td>
+        </tr>
+<!-- REPORTBUG id="report-48b029.html" -->
+        <tr class="bt_unused_code_dead_initialization">
+          <td class="DESC">Unused code</td>
+          <td class="DESC">Dead initialization</td>
+          <td>memory_leak_loop.cpp</td>
+          <td class="DESC">loop_leak</td>
+          <td class="Q">15</td>
+          <td class="Q">1</td>
+          <td><a href="report-89cc3e.html#EndPath">View Report</a></td>
+        </tr>
+<!-- REPORTBUG id="report-89cc3e.html" -->
+        <tr class="bt_memory_error_memory_leak">
+          <td class="DESC">Memory error</td>
+          <td class="DESC">Memory leak</td>
+          <td>memory_leak_destructor.cpp</td>
+          <td class="DESC">main</td>
+          <td class="Q">21</td>
+          <td class="Q">4</td>
+          <td><a href="report-c26b0c.html#EndPath">View Report</a></td>
+        </tr>
+<!-- REPORTBUG id="report-c26b0c.html" -->
+        <tr class="bt_memory_error_memory_leak">
+          <td class="DESC">Memory error</td>
+          <td class="DESC">Memory leak</td>
+          <td>memory_leak_delete.cpp</td>
+          <td class="DESC">demonstrate_leak</td>
+          <td class="Q">13</td>
+          <td class="Q">3</td>
+          <td><a href="report-d5d869.html#EndPath">View Report</a></td>
+        </tr>
+<!-- REPORTBUG id="report-d5d869.html" -->
+        <tr class="bt_memory_error_double_free">
+          <td class="DESC">Memory error</td>
+          <td class="DESC">Double free</td>
+          <td>double_free_direct.cpp</td>
+          <td class="DESC">demonstrate_double_free</td>
+          <td class="Q">19</td>
+          <td class="Q">4</td>
+          <td><a href="report-0e40a0.html#EndPath">View Report</a></td>
+        </tr>
+<!-- REPORTBUG id="report-0e40a0.html" -->
+        <tr class="bt_unused_code_dead_initialization">
+          <td class="DESC">Unused code</td>
+          <td class="DESC">Dead initialization</td>
+          <td>division_zero_int.cpp</td>
+          <td class="DESC">main</td>
+          <td class="Q">15</td>
+          <td class="Q">1</td>
+          <td><a href="report-7c4c57.html#EndPath">View Report</a></td>
+        </tr>
+<!-- REPORTBUG id="report-7c4c57.html" -->
+      </tbody>
+    </table>
+<!-- REPORTBUGEND -->
+  </body>
+</html>
