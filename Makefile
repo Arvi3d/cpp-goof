@@ -12,7 +12,6 @@ EXES = $(SRCS:.cpp=)
 
 # Clang Static Analyzer settings
 SCAN_BUILD = /opt/homebrew/opt/llvm/bin/analyze-build
-SCAN_BUILD_FLAGS = --status-bugs -enable-checker security,core,unix,deadcode,cplusplus -v -V
 
 # Default target now points to CMake build
 all: build-cmake
@@ -73,7 +72,7 @@ clang-analyze: install-clang-analyzer cmake-configure
 	rm -rf build
 	
 	cmake . -Bbuild -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
-	$(SCAN_BUILD) -o ./csa-results --cdb ./build/compile_commands.json
+	$(SCAN_BUILD) -enable-checker security,core,unix,deadcode,cplusplus -v -o ./csa-results --cdb ./build/compile_commands.json
 
 	@echo "Analysis complete. Results saved in csa-results directory."
 

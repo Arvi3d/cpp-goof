@@ -14,8 +14,6 @@ void test() {
     // The switch statement ensures value is initialized in all cases
     switch (test & 0x1) {
         case 0:
-            value = 0;
-            break;
         case 1:
             value = 1;
             break;

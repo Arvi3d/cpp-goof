@@ -50,7 +50,7 @@ std::vector<unsigned char> encrypt_with_hardcoded_iv(const std::string& plaintex
     }
 
     // Initialise the encryption operation with AES-128-CBC.
-    if(1 != EVP_EncryptInit_ex(ctx, EVP_aes_128_cbc(), nullptr, key, hardcoded_iv)) {
+    if(1 != EVP_EncryptInit_ex(ctx, EVP_aes_256_cbc(), nullptr, key, hardcoded_iv)) {
         std::cerr << "Error: EVP_EncryptInit_ex failed." << std::endl;
         EVP_CIPHER_CTX_free(ctx);
         return ciphertext_buffer;

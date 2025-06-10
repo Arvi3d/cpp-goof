@@ -50,7 +50,7 @@ std::vector<unsigned char> encrypt_with_ecb_mode(const std::vector<unsigned char
 
     // Initialise the encryption operation with AES-128-ECB.
     // No IV is used for ECB mode.
-    if(1 != EVP_EncryptInit_ex(ctx, EVP_aes_128_ecb(), nullptr, key, nullptr)) {
+    if(1 != EVP_EncryptInit_ex(ctx, EVP_aes_256_ecb(), nullptr, key, nullptr)) {
         std::cerr << "Error: EVP_EncryptInit_ex failed." << std::endl; ERR_print_errors_fp(stderr);
         EVP_CIPHER_CTX_free(ctx);
         return ciphertext_buffer;

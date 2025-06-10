@@ -12,9 +12,9 @@
     <table>
       <tr><th>User:</th><td>arvid@Arvyds-MacBook-Pro.local</td></tr>
       <tr><th>Working Directory:</th><td>/Users/arvid/Documents/workspace/cpp-goof/src</td></tr>
-      <tr><th>Command Line:</th><td>/opt/homebrew/opt/llvm/bin/analyze-build -o ./csa-results --cdb ./build/compile_commands.json</td></tr>
+      <tr><th>Command Line:</th><td>/opt/homebrew/opt/llvm/bin/analyze-build -enable-checker security,core,unix,deadcode,cplusplus -v -o ./csa-results --cdb ./build/compile_commands.json</td></tr>
       <tr><th>Clang Version:</th><td>Apple clang version 17.0.0 (clang-1700.0.13.5)</td></tr>
-      <tr><th>Date:</th><td>Tue Jun 10 16:06:32 2025</td></tr>
+      <tr><th>Date:</th><td>Tue Jun 10 17:35:57 2025</td></tr>
     </table>
     <h2>Bug Summary</h2>
     <table>
@@ -28,7 +28,7 @@
       <tbody>
         <tr style="font-weight:bold">
           <td class="SUMM_DESC">All Bugs</td>
-          <td class="Q">9</td>
+          <td class="Q">10</td>
           <td>
             <center>
               <input checked type="checkbox" id="AllBugsCheck"
@@ -95,6 +95,19 @@
             </center>
           </td>
         </tr>
+        <tr>
+          <th>Security</th><th colspan=2></th>
+        </tr>
+        <tr>
+          <td class="SUMM_DESC">Potential insecure memory buffer bounds restriction in call 'strcpy'</td>
+          <td class="Q">1</td>
+          <td>
+            <center>
+              <input checked type="checkbox"
+                     onClick="ToggleDisplay(this,'bt_security_potential_insecure_memory_buffer_bounds_restriction_in_call_strcpy');"/>
+            </center>
+          </td>
+        </tr>
       </tbody>
     </table>
 <!-- SUMMARYBUGEND -->
@@ -146,6 +159,16 @@
           <td><a href="report-ce589f.html#EndPath">View Report</a></td>
         </tr>
 <!-- REPORTBUG id="report-ce589f.html" -->
+        <tr class="bt_security_potential_insecure_memory_buffer_bounds_restriction_in_call_strcpy">
+          <td class="DESC">Security</td>
+          <td class="DESC">Potential insecure memory buffer bounds restriction in call &apos;strcpy&apos;</td>
+          <td>buffer_overflow.cpp</td>
+          <td class="DESC">main</td>
+          <td class="Q">20</td>
+          <td class="Q">1</td>
+          <td><a href="report-fbfcd0.html#EndPath">View Report</a></td>
+        </tr>
+<!-- REPORTBUG id="report-fbfcd0.html" -->
         <tr class="bt_memory_error_double_free">
           <td class="DESC">Memory error</td>
           <td class="DESC">Double free</td>
@@ -161,7 +184,7 @@
           <td class="DESC">Dead initialization</td>
           <td>memory_leak_loop.cpp</td>
           <td class="DESC">loop_leak</td>
-          <td class="Q">15</td>
+          <td class="Q">13</td>
           <td class="Q">1</td>
           <td><a href="report-89cc3e.html#EndPath">View Report</a></td>
         </tr>

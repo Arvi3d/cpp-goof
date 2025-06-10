@@ -12,8 +12,7 @@
 #include <vector>
 #include <mutex>    // For mitigation example
 #include <chrono>   // For std::this_thread::sleep_for
-#include <cstdlib>  // For std::rand, std::srand
-#include <ctime>    // For std::time
+#include <cstdlib>  // For arc4random (macOS/BSD)
 
 struct SharedResource {
     int valueA = 0;
@@ -31,7 +30,7 @@ void update_resource_non_atomic(int new_value) {
     std::cout << "Thread " << std::this_thread::get_id() << ": updating resource to " << new_value << std::endl;
     resource.valueA = new_value;
     // Simulate some processing or potential for context switch
-    std::this_thread::sleep_for(std::chrono::microseconds(10 + (std::rand() % 10)));
+    std::this_thread::sleep_for(std::chrono::microseconds(10 + (arc4random() % 10)));
     resource.valueB = new_value;
     std::cout << "Thread " << std::this_thread::get_id() << ": finished updating resource." << std::endl;
 }
@@ -42,7 +41,7 @@ void check_resource_consistency() {
         // For mitigation, lock here: std::lock_guard<std::mutex> lock(resource_mutex);
         int valA = resource.valueA;
         // Simulate a small delay or work
-        std::this_thread::sleep_for(std::chrono::microseconds(5 + (std::rand() % 5)));
+        std::this_thread::sleep_for(std::chrono::microseconds(5 + (arc4random() % 5)));
         int valB = resource.valueB;
 
         if (valA != valB) {
@@ -56,7 +55,6 @@ void check_resource_consistency() {
 }
 
 int main() {
-    std::srand(static_cast<unsigned int>(std::time(nullptr))); // Seed for rand() used in sleep
 
     std::vector<std::thread> threads;
     threads.push_back(std::thread(update_resource_non_atomic, 100));

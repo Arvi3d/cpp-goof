@@ -8,8 +8,6 @@
 // with many iterations, this can consume significant amounts of memory,
 // leading to performance degradation or program crashes.
 
-#include <vector> // Included for completeness, though not strictly used in the leak example
-
 void loop_leak() {
     for (int i = 0; i < 1000; ++i) {
         int* data = new int[100]; // Allocate memory in each iteration

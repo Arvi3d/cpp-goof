@@ -143,11 +143,11 @@ input.spoilerhider:checked + label + .spoiler{
 </style>
 </head>
 <body>
-<!-- BUGDESC Division by zero -->
+<!-- BUGDESC Value stored to 'result' during its initialization is never read -->
 
-<!-- BUGTYPE Division by zero -->
+<!-- BUGTYPE Dead initialization -->
 
-<!-- BUGCATEGORY Logic error -->
+<!-- BUGCATEGORY Unused code -->
 
 <!-- BUGFILE /Users/arvid/Documents/workspace/cpp-goof/src/division_zero_int.cpp -->
 
@@ -155,20 +155,20 @@ input.spoilerhider:checked + label + .spoiler{
 
 <!-- FUNCTIONNAME main -->
 
-<!-- ISSUEHASHCONTENTOFLINEINCONTEXT 4726a572e3cb7735113d2721e961f870 -->
+<!-- ISSUEHASHCONTENTOFLINEINCONTEXT 7c4c5778ccc34364511c579d2ce3afd8 -->
 
 <!-- BUGLINE 15 -->
 
-<!-- BUGCOLUMN 28 -->
+<!-- BUGCOLUMN 9 -->
 
-<!-- BUGPATHLENGTH 2 -->
+<!-- BUGPATHLENGTH 1 -->
 
 <!-- BUGMETAEND -->
 <!-- REPORTHEADER -->
 <h3>Bug Summary</h3>
 <table class="simpletable">
 <tr><td class="rowname">File:</td><td>/Users/arvid/Documents/workspace/cpp-goof/src/division_zero_int.cpp</td></tr>
-<tr><td class="rowname">Warning:</td><td><a href="#EndPath">line 15, column 28</a><br />Division by zero</td></tr>
+<tr><td class="rowname">Warning:</td><td><a href="#EndPath">line 15, column 9</a><br />Value stored to 'result' during its initialization is never read</td></tr>
 
 </table>
 <!-- REPORTSUMMARYEXTRA -->
@@ -177,7 +177,7 @@ input.spoilerhider:checked + label + .spoiler{
    to see keyboard shortcuts</p>
 <input type="checkbox" class="spoilerhider" id="showinvocation" />
 <label for="showinvocation" >Show analyzer invocation</label>
-<div class="spoiler">clang -cc1 -cc1 -triple arm64-apple-macosx15.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -analyze -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name division_zero_int.cpp -analyzer-checker=core -analyzer-checker=apiModeling -analyzer-checker=unix -analyzer-checker=osx -analyzer-checker=security.insecureAPI.decodeValueOfObjCType -analyzer-checker=deadcode -analyzer-checker=cplusplus -analyzer-checker=security.insecureAPI.UncheckedReturn -analyzer-checker=security.insecureAPI.getpw -analyzer-checker=security.insecureAPI.gets -analyzer-checker=security.insecureAPI.mktemp -analyzer-checker=security.insecureAPI.mkstemp -analyzer-checker=security.insecureAPI.vfork -analyzer-checker=nullability.NullPassedToNonnull -analyzer-checker=nullability.NullReturnedFromNonnull -analyzer-tidy-checker=bugprone-assert-side-effect -analyzer-tidy-checker=bugprone-infinite-loop -analyzer-tidy-checker=bugprone-move-forwarding-reference -analyzer-output plist -w -setup-static-analyzer -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=15.5 -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/arvid/Documents/workspace/cpp-goof/build -target-linker-version 1167.5 -fcoverage-compilation-dir=/Users/arvid/Documents/workspace/cpp-goof/build -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/17/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -std=gnu++17 -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -analyzer-output=html -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o /Users/arvid/Documents/workspace/cpp-goof/csa-results/scan-build-2025-06-10-16-06-28-962719-cg6z0iq1 -x c++ /Users/arvid/Documents/workspace/cpp-goof/src/division_zero_int.cpp
+<div class="spoiler">clang -cc1 -cc1 -triple arm64-apple-macosx15.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -analyze -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name division_zero_int.cpp -analyzer-checker=core -analyzer-checker=apiModeling -analyzer-checker=unix -analyzer-checker=osx -analyzer-checker=security.insecureAPI.decodeValueOfObjCType -analyzer-checker=deadcode -analyzer-checker=cplusplus -analyzer-checker=security.insecureAPI.UncheckedReturn -analyzer-checker=security.insecureAPI.getpw -analyzer-checker=security.insecureAPI.gets -analyzer-checker=security.insecureAPI.mktemp -analyzer-checker=security.insecureAPI.mkstemp -analyzer-checker=security.insecureAPI.vfork -analyzer-checker=nullability.NullPassedToNonnull -analyzer-checker=nullability.NullReturnedFromNonnull -analyzer-tidy-checker=bugprone-assert-side-effect -analyzer-tidy-checker=bugprone-infinite-loop -analyzer-tidy-checker=bugprone-move-forwarding-reference -analyzer-output plist -w -setup-static-analyzer -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=15.5 -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/arvid/Documents/workspace/cpp-goof/build -target-linker-version 1167.5 -fcoverage-compilation-dir=/Users/arvid/Documents/workspace/cpp-goof/build -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/17/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -std=gnu++17 -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -analyzer-output=html -analyzer-checker security,core,unix,deadcode,cplusplus -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o /Users/arvid/Documents/workspace/cpp-goof/csa-results/scan-build-2025-06-10-17-35-52-388277-melysrtp -x c++ /Users/arvid/Documents/workspace/cpp-goof/src/division_zero_int.cpp
 </div>
 <div id='tooltiphint' hidden="true">
   <p>Keyboard shortcuts: </p>
@@ -189,7 +189,7 @@ input.spoilerhider:checked + label + .spoiler{
   <a href="#" onclick="toggleHelp(); return false;">Close</a>
 </div>
 <script type='text/javascript'>
-var relevant_lines = {"1": {"12": 1, "13": 1, "14": 1, "15": 1}};
+var relevant_lines = {"1": {"15": 1}};
 
 var filterCounterexample = function (hide) {
   var tables = document.getElementsByClassName("code");
@@ -669,13 +669,11 @@ window.addEventListener("keydown", function (event) {
     </marker>
   </defs>
   <g id="arrows" fill="none" stroke="blue" visibility="hidden">
-    <path class="arrow" id="arrow0"/>
-    <path class="arrow" id="arrow1"/>
 
   </g>
 </svg>
 <script type='text/javascript'>
-const arrowIndices = [ 2,1,0 ]
+const arrowIndices = [ 0,0 ]
 </script>
 <table class="code" data-fileid="1">
 <tr class="codeline" data-linenumber="1"><td class="num" id="LN1">1</td><td class="line"><span class='comment'>// Summary: Division by Zero (Integer)</span></td></tr>
@@ -690,11 +688,10 @@ const arrowIndices = [ 2,1,0 ]
 <tr class="codeline" data-linenumber="10"><td class="num" id="LN10">10</td><td class="line"><span class='directive'>#include &lt;iostream&gt;</span></td></tr>
 <tr class="codeline" data-linenumber="11"><td class="num" id="LN11">11</td><td class="line"> </td></tr>
 <tr class="codeline" data-linenumber="12"><td class="num" id="LN12">12</td><td class="line"><span class='keyword'>int</span> main() {</td></tr>
-<tr class="codeline" data-linenumber="13"><td class="num" id="LN13">13</td><td class="line">    <span id="start1"><span class='keyword'>int</span></span> numerator = 10;</td></tr>
-<tr class="codeline" data-linenumber="14"><td class="num" id="LN14">14</td><td class="line">    <span id="start0"><span class="mrange"><span id="end1"><span class='keyword'>int</span></span></span> denominator</span> = 0;</td></tr>
-<tr><td class="num"></td><td class="line"><div id="Path1" class="msg msgEvent" style="margin-left:5ex"><table class="msgT"><tr><td valign="top"><div class="PathIndex PathIndexEvent">1</div></td><td>'denominator' initialized to 0</td><td><div class="PathNav"><a href="#EndPath" title="Next event (2)">&#x2192;</a></div></td></tr></table></div></td></tr>
-<tr class="codeline" data-linenumber="15"><td class="num" id="LN15">15</td><td class="line">    <span class='keyword'>int</span> result = <span class="mrange">numerator <span id="end0">/</span> denominator</span>; <span class='comment'>// Undefined behavior! Likely crash</span></td></tr>
-<tr><td class="num"></td><td class="line"><div id="EndPath" class="msg msgEvent" style="margin-left:28ex"><table class="msgT"><tr><td valign="top"><div class="PathIndex PathIndexEvent">2</div></td><td><div class="PathNav"><a href="#Path1" title="Previous event (1)">&#x2190;</a></div></td><td>Division by zero</td></tr></table></div></td></tr>
+<tr class="codeline" data-linenumber="13"><td class="num" id="LN13">13</td><td class="line">    <span class='keyword'>int</span> numerator = 10;</td></tr>
+<tr class="codeline" data-linenumber="14"><td class="num" id="LN14">14</td><td class="line">    <span class='keyword'>int</span> denominator = 0;</td></tr>
+<tr class="codeline" data-linenumber="15"><td class="num" id="LN15">15</td><td class="line">    <span class='keyword'>int</span> <span class="mrange">result</span> = <span class="mrange">numerator / denominator</span>; <span class='comment'>// Undefined behavior! Likely crash</span></td></tr>
+<tr><td class="num"></td><td class="line"><div id="EndPath" class="msg msgEvent" style="margin-left:9ex">Value stored to 'result' during its initialization is never read</div></td></tr>
 <tr class="codeline" data-linenumber="16"><td class="num" id="LN16">16</td><td class="line">    <span class='keyword'>return</span> 0;</td></tr>
 <tr class="codeline" data-linenumber="17"><td class="num" id="LN17">17</td><td class="line">}</td></tr>
 <tr class="codeline" data-linenumber="18"><td class="num" id="LN18">18</td><td class="line"> </td></tr>
