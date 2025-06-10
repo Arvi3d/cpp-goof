@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-<title>/Users/arvid/Documents/workspace/cpp-goof/src/memory_leak_destructor.cpp</title>
+<title>/Users/arvid/Documents/workspace/cpp-goof/src/dangling_pointer.cpp</title>
 
 <style type="text/css">
 body { color:#000000; background-color:#ffffff }
@@ -143,23 +143,23 @@ input.spoilerhider:checked + label + .spoiler{
 </style>
 </head>
 <body>
-<!-- BUGDESC Potential leak of memory pointed to by 'lr.data' -->
+<!-- BUGDESC Use of memory after it is freed -->
 
-<!-- BUGTYPE Memory leak -->
+<!-- BUGTYPE Use-after-free -->
 
 <!-- BUGCATEGORY Memory error -->
 
-<!-- BUGFILE /Users/arvid/Documents/workspace/cpp-goof/src/memory_leak_destructor.cpp -->
+<!-- BUGFILE /Users/arvid/Documents/workspace/cpp-goof/src/dangling_pointer.cpp -->
 
-<!-- FILENAME memory_leak_destructor.cpp -->
+<!-- FILENAME dangling_pointer.cpp -->
 
-<!-- FUNCTIONNAME main -->
+<!-- FUNCTIONNAME use_after_free -->
 
-<!-- ISSUEHASHCONTENTOFLINEINCONTEXT c26b0c551ba76594ecd3e05c1a04d1d6 -->
+<!-- ISSUEHASHCONTENTOFLINEINCONTEXT ce589f07f789ef69e0846145f59e347c -->
 
-<!-- BUGLINE 21 -->
+<!-- BUGLINE 18 -->
 
-<!-- BUGCOLUMN 5 -->
+<!-- BUGCOLUMN 10 -->
 
 <!-- BUGPATHLENGTH 4 -->
 
@@ -167,8 +167,8 @@ input.spoilerhider:checked + label + .spoiler{
 <!-- REPORTHEADER -->
 <h3>Bug Summary</h3>
 <table class="simpletable">
-<tr><td class="rowname">File:</td><td>/Users/arvid/Documents/workspace/cpp-goof/src/memory_leak_destructor.cpp</td></tr>
-<tr><td class="rowname">Warning:</td><td><a href="#EndPath">line 21, column 5</a><br />Potential leak of memory pointed to by 'lr.data'</td></tr>
+<tr><td class="rowname">File:</td><td>/Users/arvid/Documents/workspace/cpp-goof/src/dangling_pointer.cpp</td></tr>
+<tr><td class="rowname">Warning:</td><td><a href="#EndPath">line 18, column 10</a><br />Use of memory after it is freed</td></tr>
 
 </table>
 <!-- REPORTSUMMARYEXTRA -->
@@ -177,7 +177,7 @@ input.spoilerhider:checked + label + .spoiler{
    to see keyboard shortcuts</p>
 <input type="checkbox" class="spoilerhider" id="showinvocation" />
 <label for="showinvocation" >Show analyzer invocation</label>
-<div class="spoiler">clang -cc1 -cc1 -triple arm64-apple-macosx15.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -analyze -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name memory_leak_destructor.cpp -analyzer-checker=core -analyzer-checker=apiModeling -analyzer-checker=unix -analyzer-checker=osx -analyzer-checker=security.insecureAPI.decodeValueOfObjCType -analyzer-checker=deadcode -analyzer-checker=cplusplus -analyzer-checker=security.insecureAPI.UncheckedReturn -analyzer-checker=security.insecureAPI.getpw -analyzer-checker=security.insecureAPI.gets -analyzer-checker=security.insecureAPI.mktemp -analyzer-checker=security.insecureAPI.mkstemp -analyzer-checker=security.insecureAPI.vfork -analyzer-checker=nullability.NullPassedToNonnull -analyzer-checker=nullability.NullReturnedFromNonnull -analyzer-tidy-checker=bugprone-assert-side-effect -analyzer-tidy-checker=bugprone-infinite-loop -analyzer-tidy-checker=bugprone-move-forwarding-reference -analyzer-output plist -w -setup-static-analyzer -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=15.5 -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/arvid/Documents/workspace/cpp-goof/build -target-linker-version 1167.5 -fcoverage-compilation-dir=/Users/arvid/Documents/workspace/cpp-goof/build -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/17/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -std=gnu++17 -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -analyzer-output=html -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o /Users/arvid/Documents/workspace/cpp-goof/scan-build-results/scan-build-2025-06-10-16-02-44-117291-3iz827g0 -x c++ /Users/arvid/Documents/workspace/cpp-goof/src/memory_leak_destructor.cpp
+<div class="spoiler">clang -cc1 -cc1 -triple arm64-apple-macosx15.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -analyze -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name dangling_pointer.cpp -analyzer-checker=core -analyzer-checker=apiModeling -analyzer-checker=unix -analyzer-checker=osx -analyzer-checker=security.insecureAPI.decodeValueOfObjCType -analyzer-checker=deadcode -analyzer-checker=cplusplus -analyzer-checker=security.insecureAPI.UncheckedReturn -analyzer-checker=security.insecureAPI.getpw -analyzer-checker=security.insecureAPI.gets -analyzer-checker=security.insecureAPI.mktemp -analyzer-checker=security.insecureAPI.mkstemp -analyzer-checker=security.insecureAPI.vfork -analyzer-checker=nullability.NullPassedToNonnull -analyzer-checker=nullability.NullReturnedFromNonnull -analyzer-tidy-checker=bugprone-assert-side-effect -analyzer-tidy-checker=bugprone-infinite-loop -analyzer-tidy-checker=bugprone-move-forwarding-reference -analyzer-output plist -w -setup-static-analyzer -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=15.5 -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/arvid/Documents/workspace/cpp-goof/build -target-linker-version 1167.5 -fcoverage-compilation-dir=/Users/arvid/Documents/workspace/cpp-goof/build -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/17/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -std=gnu++17 -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -analyzer-output=html -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o /Users/arvid/Documents/workspace/cpp-goof/csa-results/scan-build-2025-06-10-16-06-28-962719-cg6z0iq1 -x c++ /Users/arvid/Documents/workspace/cpp-goof/src/dangling_pointer.cpp
 </div>
 <div id='tooltiphint' hidden="true">
   <p>Keyboard shortcuts: </p>
@@ -189,7 +189,7 @@ input.spoilerhider:checked + label + .spoiler{
   <a href="#" onclick="toggleHelp(); return false;">Close</a>
 </div>
 <script type='text/javascript'>
-var relevant_lines = {"1": {"13": 1, "14": 1, "19": 1, "20": 1, "21": 1}};
+var relevant_lines = {"1": {"12": 1, "13": 1, "14": 1, "15": 1, "17": 1, "18": 1, "23": 1, "24": 1}, "121": {"688": 1, "689": 1}, "875": {"173": 1, "174": 1, "571": 1}, "21546": {"26": 1, "27": 1}, "32916": {"52": 1, "56": 1, "66": 1}, "73293": {"228": 1, "229": 1}, "148440": {"73": 1, "74": 1, "141": 1, "498": 1, "499": 1, "503": 1, "504": 1, "521": 1, "618": 1, "619": 1, "723": 1, "724": 1, "725": 1, "726": 1}};
 
 var filterCounterexample = function (hide) {
   var tables = document.getElementsByClassName("code");
@@ -677,58 +677,62 @@ window.addEventListener("keydown", function (event) {
   </g>
 </svg>
 <script type='text/javascript'>
-const arrowIndices = [ 4,3,2,2,0 ]
+const arrowIndices = [ 4,4,3,2,0 ]
 </script>
 <table class="code" data-fileid="1">
-<tr class="codeline" data-linenumber="1"><td class="num" id="LN1">1</td><td class="line"><span class='comment'>// Summary: Memory Leak due to Missing Destructor</span></td></tr>
-<tr class="codeline" data-linenumber="2"><td class="num" id="LN2">2</td><td class="line"><span class='comment'>// A common C++ pitfall is a memory leak occurring when a class allocates</span></td></tr>
-<tr class="codeline" data-linenumber="3"><td class="num" id="LN3">3</td><td class="line"><span class='comment'>// memory dynamically (e.g., using 'new') but lacks a destructor, or its</span></td></tr>
-<tr class="codeline" data-linenumber="4"><td class="num" id="LN4">4</td><td class="line"><span class='comment'>// destructor fails to deallocate this memory. When an object of such a</span></td></tr>
-<tr class="codeline" data-linenumber="5"><td class="num" id="LN5">5</td><td class="line"><span class='comment'>// class is destroyed, the memory it acquired remains allocated but</span></td></tr>
-<tr class="codeline" data-linenumber="6"><td class="num" id="LN6">6</td><td class="line"><span class='comment'>// unreachable, leading to a leak. This is particularly problematic for</span></td></tr>
-<tr class="codeline" data-linenumber="7"><td class="num" id="LN7">7</td><td class="line"><span class='comment'>// objects created and destroyed frequently, or for long-running applications,</span></td></tr>
-<tr class="codeline" data-linenumber="8"><td class="num" id="LN8">8</td><td class="line"><span class='comment'>// as cumulative leaks can exhaust system memory and degrade performance.</span></td></tr>
+<tr class="codeline" data-linenumber="1"><td class="num" id="LN1">1</td><td class="line"><span class='comment'>// Summary: Dangling Pointer / Use After Free</span></td></tr>
+<tr class="codeline" data-linenumber="2"><td class="num" id="LN2">2</td><td class="line"><span class='comment'>// A dangling pointer is a pointer that refers to a memory location that has</span></td></tr>
+<tr class="codeline" data-linenumber="3"><td class="num" id="LN3">3</td><td class="line"><span class='comment'>// been deallocated (freed). Attempting to dereference or use such a pointer</span></td></tr>
+<tr class="codeline" data-linenumber="4"><td class="num" id="LN4">4</td><td class="line"><span class='comment'>// results in a "Use After Free" error. This is undefined behavior and can</span></td></tr>
+<tr class="codeline" data-linenumber="5"><td class="num" id="LN5">5</td><td class="line"><span class='comment'>// lead to crashes, corrupted data, or security vulnerabilities. If the freed</span></td></tr>
+<tr class="codeline" data-linenumber="6"><td class="num" id="LN6">6</td><td class="line"><span class='comment'>// memory is later reallocated for a different purpose, using the dangling</span></td></tr>
+<tr class="codeline" data-linenumber="7"><td class="num" id="LN7">7</td><td class="line"><span class='comment'>// pointer can inadvertently access or modify unrelated data, potentially</span></td></tr>
+<tr class="codeline" data-linenumber="8"><td class="num" id="LN8">8</td><td class="line"><span class='comment'>// allowing an attacker to execute arbitrary code or cause other exploits.</span></td></tr>
 <tr class="codeline" data-linenumber="9"><td class="num" id="LN9">9</td><td class="line"> </td></tr>
-<tr class="codeline" data-linenumber="10"><td class="num" id="LN10">10</td><td class="line"><span class='keyword'>class</span> LeakyResource {</td></tr>
-<tr class="codeline" data-linenumber="11"><td class="num" id="LN11">11</td><td class="line"><span class='keyword'>public</span>:</td></tr>
-<tr class="codeline" data-linenumber="12"><td class="num" id="LN12">12</td><td class="line">    <span class='keyword'>int</span>* data;</td></tr>
-<tr class="codeline" data-linenumber="13"><td class="num" id="LN13">13</td><td class="line">    <span id="start2">LeakyResource</span>() {</td></tr>
-<tr class="codeline" data-linenumber="14"><td class="num" id="LN14">14</td><td class="line">        <span id="end2">data</span> = <span class="mrange"><span class='keyword'>new</span> <span class='keyword'>int</span>[100]</span>; <span class='comment'>// Allocate memory</span></td></tr>
+<tr class="codeline" data-linenumber="10"><td class="num" id="LN10">10</td><td class="line"><span class='directive'>#include &lt;iostream&gt;</span></td></tr>
+<tr class="codeline" data-linenumber="11"><td class="num" id="LN11">11</td><td class="line"> </td></tr>
+<tr class="codeline" data-linenumber="12"><td class="num" id="LN12">12</td><td class="line"><span id="start3"><span class='keyword'>void</span></span> use_after_free() {</td></tr>
+<tr class="codeline" data-linenumber="13"><td class="num" id="LN13">13</td><td class="line">    <span id="start2"><span id="end3"><span class='keyword'>int</span></span></span>* ptr = <span class="mrange"><span class='keyword'>new</span> <span class='keyword'>int</span>(42)</span>; <span class='comment'>// Allocate memory</span></td></tr>
 <tr><td class="num"></td><td class="line"><div id="Path2" class="msg msgEvent" style="margin-left:16ex"><table class="msgT"><tr><td valign="top"><div class="PathIndex PathIndexEvent">2</div></td><td><div class="PathNav"><a href="#Path1" title="Previous event (1)">&#x2190;</a></div></td><td>Memory is allocated</td><td><div class="PathNav"><a href="#Path3" title="Next event (3)">&#x2192;</a></div></td></tr></table></div></td></tr>
-<tr class="codeline" data-linenumber="15"><td class="num" id="LN15">15</td><td class="line">        <span class='comment'>// No destructor to free 'data'</span></td></tr>
-<tr class="codeline" data-linenumber="16"><td class="num" id="LN16">16</td><td class="line">    }</td></tr>
-<tr class="codeline" data-linenumber="17"><td class="num" id="LN17">17</td><td class="line">};</td></tr>
-<tr class="codeline" data-linenumber="18"><td class="num" id="LN18">18</td><td class="line"> </td></tr>
-<tr class="codeline" data-linenumber="19"><td class="num" id="LN19">19</td><td class="line"><span class='keyword'>int</span> main() {</td></tr>
-<tr class="codeline" data-linenumber="20"><td class="num" id="LN20">20</td><td class="line">    <span id="start0"><span id="end1"><span id="start3">LeakyResource</span></span></span> <span id="start1"><span class="mrange"><span class="mrange"><span id="end3">lr</span></span></span></span>; <span class='comment'>// lr.data is leaked when lr goes out of scope</span></td></tr>
-<tr><td class="num"></td><td class="line"><div id="Path1" class="msg msgEvent" style="margin-left:19ex"><table class="msgT"><tr><td valign="top"><div class="PathIndex PathIndexEvent">1</div></td><td>Calling default constructor for 'LeakyResource'</td><td><div class="PathNav"><a href="#Path2" title="Next event (2)">&#x2192;</a></div></td></tr></table></div></td></tr>
-<tr><td class="num"></td><td class="line"><div id="Path3" class="msg msgEvent" style="margin-left:19ex"><table class="msgT"><tr><td valign="top"><div class="PathIndex PathIndexEvent">3</div></td><td><div class="PathNav"><a href="#Path2" title="Previous event (2)">&#x2190;</a></div></td><td>Returning from default constructor for 'LeakyResource'</td><td><div class="PathNav"><a href="#EndPath" title="Next event (4)">&#x2192;</a></div></td></tr></table></div></td></tr>
-<tr class="codeline" data-linenumber="21"><td class="num" id="LN21">21</td><td class="line">    <span id="end0"><span class='keyword'>return</span></span> 0;</td></tr>
-<tr><td class="num"></td><td class="line"><div id="EndPath" class="msg msgEvent" style="margin-left:5ex"><table class="msgT"><tr><td valign="top"><div class="PathIndex PathIndexEvent">4</div></td><td><div class="PathNav"><a href="#Path3" title="Previous event (3)">&#x2190;</a></div></td><td>Potential leak of memory pointed to by 'lr.data'</td></tr></table></div></td></tr>
-<tr class="codeline" data-linenumber="22"><td class="num" id="LN22">22</td><td class="line">}</td></tr>
-<tr class="codeline" data-linenumber="23"><td class="num" id="LN23">23</td><td class="line"> </td></tr>
-<tr class="codeline" data-linenumber="24"><td class="num" id="LN24">24</td><td class="line"><span class='comment'>// Mitigation Strategy:</span></td></tr>
-<tr class="codeline" data-linenumber="25"><td class="num" id="LN25">25</td><td class="line"><span class='comment'>// To prevent memory leaks from missing or incorrect destructors:</span></td></tr>
-<tr class="codeline" data-linenumber="26"><td class="num" id="LN26">26</td><td class="line"><span class='comment'>// 1. Implement a Destructor: If your class allocates resources (like memory</span></td></tr>
-<tr class="codeline" data-linenumber="27"><td class="num" id="LN27">27</td><td class="line"><span class='comment'>//    with 'new' or 'new[]'), it MUST have a destructor that releases these</span></td></tr>
-<tr class="codeline" data-linenumber="28"><td class="num" id="LN28">28</td><td class="line"><span class='comment'>//    resources (using 'delete' or 'delete[]' respectively).</span></td></tr>
-<tr class="codeline" data-linenumber="29"><td class="num" id="LN29">29</td><td class="line"><span class='comment'>// 2. Follow the Rule of Three/Five/Zero:</span></td></tr>
-<tr class="codeline" data-linenumber="30"><td class="num" id="LN30">30</td><td class="line"><span class='comment'>//    - Rule of Three: If you define any of a destructor, copy constructor,</span></td></tr>
-<tr class="codeline" data-linenumber="31"><td class="num" id="LN31">31</td><td class="line"><span class='comment'>//      or copy assignment operator, you should probably define all three.</span></td></tr>
-<tr class="codeline" data-linenumber="32"><td class="num" id="LN32">32</td><td class="line"><span class='comment'>//    - Rule of Five (C++11 onwards): Extends the Rule of Three to include</span></td></tr>
-<tr class="codeline" data-linenumber="33"><td class="num" id="LN33">33</td><td class="line"><span class='comment'>//      move constructor and move assignment operator.</span></td></tr>
-<tr class="codeline" data-linenumber="34"><td class="num" id="LN34">34</td><td class="line"><span class='comment'>//    - Rule of Zero: Prefer classes that manage no resources directly.</span></td></tr>
-<tr class="codeline" data-linenumber="35"><td class="num" id="LN35">35</td><td class="line"><span class='comment'>//      Instead, use resource-managing classes from the standard library</span></td></tr>
-<tr class="codeline" data-linenumber="36"><td class="num" id="LN36">36</td><td class="line"><span class='comment'>//      (e.g., std::vector, std::string) or smart pointers.</span></td></tr>
-<tr class="codeline" data-linenumber="37"><td class="num" id="LN37">37</td><td class="line"><span class='comment'>// 3. Use Smart Pointers: Employ `std::unique_ptr` for exclusive ownership</span></td></tr>
-<tr class="codeline" data-linenumber="38"><td class="num" id="LN38">38</td><td class="line"><span class='comment'>//    or `std::shared_ptr` for shared ownership. These automatically manage</span></td></tr>
-<tr class="codeline" data-linenumber="39"><td class="num" id="LN39">39</td><td class="line"><span class='comment'>//    the lifetime of dynamically allocated objects, deallocating memory</span></td></tr>
-<tr class="codeline" data-linenumber="40"><td class="num" id="LN40">40</td><td class="line"><span class='comment'>//    when the smart pointer goes out of scope. This often aligns with the</span></td></tr>
-<tr class="codeline" data-linenumber="41"><td class="num" id="LN41">41</td><td class="line"><span class='comment'>//    Rule of Zero.</span></td></tr>
-<tr class="codeline" data-linenumber="42"><td class="num" id="LN42">42</td><td class="line"><span class='comment'>// 4. Code Reviews &amp; Static Analysis: Regularly review code for resource</span></td></tr>
-<tr class="codeline" data-linenumber="43"><td class="num" id="LN43">43</td><td class="line"><span class='comment'>//    management issues. Use static analysis tools that can detect</span></td></tr>
-<tr class="codeline" data-linenumber="44"><td class="num" id="LN44">44</td><td class="line"><span class='comment'>//    potential memory leaks.</span></td></tr>
-<tr class="codeline" data-linenumber="45"><td class="num" id="LN45">45</td><td class="line"><span class='comment'>// 5. Memory Profiling Tools: Utilize tools like Valgrind (on Linux/macOS)</span></td></tr>
-<tr class="codeline" data-linenumber="46"><td class="num" id="LN46">46</td><td class="line"><span class='comment'>//    or Visual Studio's debugger (on Windows) to detect memory leaks</span></td></tr>
-<tr class="codeline" data-linenumber="47"><td class="num" id="LN47">47</td><td class="line"><span class='comment'>//    during runtime.</span></td></tr>
+<tr class="codeline" data-linenumber="14"><td class="num" id="LN14">14</td><td class="line">    std::cout &lt;&lt; <span class='string_literal'>"Value before free: "</span> &lt;&lt; *ptr &lt;&lt; std::endl;</td></tr>
+<tr class="codeline" data-linenumber="15"><td class="num" id="LN15">15</td><td class="line">    <span id="start1"><span class="mrange"><span id="end2"><span class='keyword'>delete</span></span></span> ptr</span>;             <span class='comment'>// Deallocate memory, ptr is now dangling</span></td></tr>
+<tr><td class="num"></td><td class="line"><div id="Path3" class="msg msgEvent" style="margin-left:5ex"><table class="msgT"><tr><td valign="top"><div class="PathIndex PathIndexEvent">3</div></td><td><div class="PathNav"><a href="#Path2" title="Previous event (2)">&#x2190;</a></div></td><td>Memory is released</td><td><div class="PathNav"><a href="#EndPath" title="Next event (4)">&#x2192;</a></div></td></tr></table></div></td></tr>
+<tr class="codeline" data-linenumber="16"><td class="num" id="LN16">16</td><td class="line">    <span class='comment'>// ptr = nullptr;       // Good practice: Set ptr to nullptr after delete</span></td></tr>
+<tr class="codeline" data-linenumber="17"><td class="num" id="LN17">17</td><td class="line">    std::cout &lt;&lt; <span class='string_literal'>"Attempting to use pointer after free..."</span> &lt;&lt; std::endl;</td></tr>
+<tr class="codeline" data-linenumber="18"><td class="num" id="LN18">18</td><td class="line">    <span class="mrange"><span id="start0"><span id="end1">*</span></span>ptr</span> <span id="end0">=</span> 100;             <span class='comment'>// Use After Free: Undefined Behavior!</span></td></tr>
+<tr><td class="num"></td><td class="line"><div id="EndPath" class="msg msgEvent" style="margin-left:10ex"><table class="msgT"><tr><td valign="top"><div class="PathIndex PathIndexEvent">4</div></td><td><div class="PathNav"><a href="#Path3" title="Previous event (3)">&#x2190;</a></div></td><td>Use of memory after it is freed</td></tr></table></div></td></tr>
+<tr class="codeline" data-linenumber="19"><td class="num" id="LN19">19</td><td class="line">    <span class='comment'>// The behavior here is unpredictable. It might crash, or it might seem to work</span></td></tr>
+<tr class="codeline" data-linenumber="20"><td class="num" id="LN20">20</td><td class="line">    <span class='comment'>// by corrupting memory that might be reused later.</span></td></tr>
+<tr class="codeline" data-linenumber="21"><td class="num" id="LN21">21</td><td class="line">}</td></tr>
+<tr class="codeline" data-linenumber="22"><td class="num" id="LN22">22</td><td class="line"> </td></tr>
+<tr class="codeline" data-linenumber="23"><td class="num" id="LN23">23</td><td class="line"><span class='keyword'>int</span> main() {</td></tr>
+<tr class="codeline" data-linenumber="24"><td class="num" id="LN24">24</td><td class="line">    <span class="mrange">use_after_free()</span>;</td></tr>
+<tr><td class="num"></td><td class="line"><div id="Path1" class="msg msgEvent" style="margin-left:5ex"><table class="msgT"><tr><td valign="top"><div class="PathIndex PathIndexEvent">1</div></td><td>Calling 'use_after_free'</td><td><div class="PathNav"><a href="#Path2" title="Next event (2)">&#x2192;</a></div></td></tr></table></div></td></tr>
+<tr class="codeline" data-linenumber="25"><td class="num" id="LN25">25</td><td class="line">    <span class='keyword'>return</span> 0;</td></tr>
+<tr class="codeline" data-linenumber="26"><td class="num" id="LN26">26</td><td class="line">}</td></tr>
+<tr class="codeline" data-linenumber="27"><td class="num" id="LN27">27</td><td class="line"> </td></tr>
+<tr class="codeline" data-linenumber="28"><td class="num" id="LN28">28</td><td class="line"><span class='comment'>// Mitigation Strategy:</span></td></tr>
+<tr class="codeline" data-linenumber="29"><td class="num" id="LN29">29</td><td class="line"><span class='comment'>// To prevent dangling pointers and Use After Free vulnerabilities:</span></td></tr>
+<tr class="codeline" data-linenumber="30"><td class="num" id="LN30">30</td><td class="line"><span class='comment'>// 1. Set Pointers to `nullptr` After Deallocation: Immediately after `delete`ing</span></td></tr>
+<tr class="codeline" data-linenumber="31"><td class="num" id="LN31">31</td><td class="line"><span class='comment'>//    a pointer, set it to `nullptr`. This makes subsequent checks for null</span></td></tr>
+<tr class="codeline" data-linenumber="32"><td class="num" id="LN32">32</td><td class="line"><span class='comment'>//    effective in preventing dereference of a dangling pointer.</span></td></tr>
+<tr class="codeline" data-linenumber="33"><td class="num" id="LN33">33</td><td class="line"><span class='comment'>//    Example: delete ptr; ptr = nullptr;</span></td></tr>
+<tr class="codeline" data-linenumber="34"><td class="num" id="LN34">34</td><td class="line"><span class='comment'>// 2. Avoid Multiple Pointers to the Same Raw Memory Without Clear Ownership:</span></td></tr>
+<tr class="codeline" data-linenumber="35"><td class="num" id="LN35">35</td><td class="line"><span class='comment'>//    If multiple pointers refer to the same memory managed by `new`/`delete`,</span></td></tr>
+<tr class="codeline" data-linenumber="36"><td class="num" id="LN36">36</td><td class="line"><span class='comment'>//    ensure only one is responsible for deallocation, and others are not used</span></td></tr>
+<tr class="codeline" data-linenumber="37"><td class="num" id="LN37">37</td><td class="line"><span class='comment'>//    after deallocation.</span></td></tr>
+<tr class="codeline" data-linenumber="38"><td class="num" id="LN38">38</td><td class="line"><span class='comment'>// 3. Use Smart Pointers: `std::unique_ptr` enforces exclusive ownership,</span></td></tr>
+<tr class="codeline" data-linenumber="39"><td class="num" id="LN39">39</td><td class="line"><span class='comment'>//    preventing dangling pointers by automatically managing memory and nullifying</span></td></tr>
+<tr class="codeline" data-linenumber="40"><td class="num" id="LN40">40</td><td class="line"><span class='comment'>//    the pointer on move. `std::shared_ptr` uses reference counting; memory is</span></td></tr>
+<tr class="codeline" data-linenumber="41"><td class="num" id="LN41">41</td><td class="line"><span class='comment'>//    freed only when the last `shared_ptr` to it is destroyed. `std::weak_ptr`</span></td></tr>
+<tr class="codeline" data-linenumber="42"><td class="num" id="LN42">42</td><td class="line"><span class='comment'>//    can be used to observe a `shared_ptr`-managed object without affecting its</span></td></tr>
+<tr class="codeline" data-linenumber="43"><td class="num" id="LN43">43</td><td class="line"><span class='comment'>//    lifetime, and it can be checked (e.g., via `lock()`) before use.</span></td></tr>
+<tr class="codeline" data-linenumber="44"><td class="num" id="LN44">44</td><td class="line"><span class='comment'>// 4. Be Cautious with Pointers to Stack Variables: Do not return pointers or</span></td></tr>
+<tr class="codeline" data-linenumber="45"><td class="num" id="LN45">45</td><td class="line"><span class='comment'>//    references to local (stack-allocated) variables from functions, as they</span></td></tr>
+<tr class="codeline" data-linenumber="46"><td class="num" id="LN46">46</td><td class="line"><span class='comment'>//    become dangling once the function exits.</span></td></tr>
+<tr class="codeline" data-linenumber="47"><td class="num" id="LN47">47</td><td class="line"><span class='comment'>// 5. Code Reviews and Static/Dynamic Analysis: Use static analysis tools (SAST)</span></td></tr>
+<tr class="codeline" data-linenumber="48"><td class="num" id="LN48">48</td><td class="line"><span class='comment'>//    and dynamic analysis tools (DAST, e.g., AddressSanitizer - ASan) to detect</span></td></tr>
+<tr class="codeline" data-linenumber="49"><td class="num" id="LN49">49</td><td class="line"><span class='comment'>//    Use After Free issues. Thorough code reviews are also crucial.</span></td></tr>
+<tr class="codeline" data-linenumber="50"><td class="num" id="LN50">50</td><td class="line"><span class='comment'>// 6. Object Lifetimes: Clearly define and manage the lifetimes of objects,</span></td></tr>
+<tr class="codeline" data-linenumber="51"><td class="num" id="LN51">51</td><td class="line"><span class='comment'>//    especially when raw pointers are involved.</span></td></tr>
 </table></body></html>

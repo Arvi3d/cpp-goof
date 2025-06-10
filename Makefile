@@ -27,7 +27,7 @@ all-direct: $(EXES)
 # Clean target
 clean:
 	rm -f $(OBJS) $(EXES)
-	rm -rf scan-build-results
+	rm -rf csa-results
 	rm -rf build
 
 # Snyk security testing section
@@ -69,13 +69,13 @@ install-clang-analyzer:
 .PHONY: clang-analyze
 clang-analyze: install-clang-analyzer cmake-configure
 	@echo "Running Clang Static Analyzer on CMake build..."
-	mkdir -p scan-build-results
+	mkdir -p csa-results
 	rm -rf build
 	
 	cmake . -Bbuild -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
-	$(SCAN_BUILD) -o ./scan-build-results --cdb ./build/compile_commands.json
+	$(SCAN_BUILD) -o ./csa-results --cdb ./build/compile_commands.json
 
-	@echo "Analysis complete. Results saved in scan-build-results directory."
+	@echo "Analysis complete. Results saved in csa-results directory."
 
 # Install project dependencies (CMake, Conan) on macOS
 .PHONY: install-deps
