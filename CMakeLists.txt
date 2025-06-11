@@ -13,8 +13,8 @@ find_package(OpenSSL REQUIRED)
 # set(CMAKE_TOOLCHAIN_FILE ${CMAKE_BINARY_DIR}/conan_toolchain.cmake) # This line is commented out
 
 # Add source files as libraries to test analysis between Translation Units
-add_library(format_string_library src/lib/format_string.cpp)
-add_library(integer_division_lib src/lib/integer_division.cpp)
+add_library(format_string_library src/utils/format_string.cpp)
+add_library(integer_division_lib src/utils/integer_division.cpp)
 
 # Add source files as executables (assuming they are in the project root)
 

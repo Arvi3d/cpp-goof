@@ -12,7 +12,7 @@
 #include <cstdio> // For printf, snprintf (C-style functions)
 #include <string> // For strcspn
 #include <cstring> // Required for strcspn if <string> doesn't pull it in on all compilers
-#include "lib/format_string.h" // Include the library header
+#include "utils/format_string.h" // Include the library header
 
 int main() {
     char user_buffer[100];

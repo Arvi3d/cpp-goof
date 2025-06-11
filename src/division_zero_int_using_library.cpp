@@ -8,7 +8,7 @@
 // to denial of service if an attacker can control the divisor.
 
 #include <iostream>
-#include "lib/integer_division.h" // Include the new library header
+#include "utils/integer_division.h" // Include the new library header
 
 int main() {
     int_division(10, 1); // safe
