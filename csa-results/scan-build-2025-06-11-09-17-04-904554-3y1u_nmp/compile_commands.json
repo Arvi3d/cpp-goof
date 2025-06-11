@@ -1,6 +1,18 @@
 [
 {
   "directory": "/Users/arvid/Documents/workspace/cpp-goof/build",
+  "command": "/usr/bin/c++   -std=gnu++17 -arch arm64 -o CMakeFiles/format_string_library.dir/src/lib/format_string.cpp.o -c /Users/arvid/Documents/workspace/cpp-goof/src/lib/format_string.cpp",
+  "file": "/Users/arvid/Documents/workspace/cpp-goof/src/lib/format_string.cpp",
+  "output": "CMakeFiles/format_string_library.dir/src/lib/format_string.cpp.o"
+},
+{
+  "directory": "/Users/arvid/Documents/workspace/cpp-goof/build",
+  "command": "/usr/bin/c++   -std=gnu++17 -arch arm64 -o CMakeFiles/integer_division_lib.dir/src/lib/integer_division.cpp.o -c /Users/arvid/Documents/workspace/cpp-goof/src/lib/integer_division.cpp",
+  "file": "/Users/arvid/Documents/workspace/cpp-goof/src/lib/integer_division.cpp",
+  "output": "CMakeFiles/integer_division_lib.dir/src/lib/integer_division.cpp.o"
+},
+{
+  "directory": "/Users/arvid/Documents/workspace/cpp-goof/build",
   "command": "/usr/bin/c++   -std=gnu++17 -arch arm64 -o CMakeFiles/buffer_overflow.dir/src/buffer_overflow.cpp.o -c /Users/arvid/Documents/workspace/cpp-goof/src/buffer_overflow.cpp",
   "file": "/Users/arvid/Documents/workspace/cpp-goof/src/buffer_overflow.cpp",
   "output": "CMakeFiles/buffer_overflow.dir/src/buffer_overflow.cpp.o"
@@ -172,5 +184,11 @@
   "command": "/usr/bin/c++  -isystem /opt/homebrew/Cellar/openssl@3/3.5.0/include -std=gnu++17 -arch arm64 -o CMakeFiles/cryptography_ecb_mode.dir/src/cryptography_ecb_mode.cpp.o -c /Users/arvid/Documents/workspace/cpp-goof/src/cryptography_ecb_mode.cpp",
   "file": "/Users/arvid/Documents/workspace/cpp-goof/src/cryptography_ecb_mode.cpp",
   "output": "CMakeFiles/cryptography_ecb_mode.dir/src/cryptography_ecb_mode.cpp.o"
+},
+{
+  "directory": "/Users/arvid/Documents/workspace/cpp-goof/build",
+  "command": "/usr/bin/c++   -std=gnu++17 -arch arm64 -o CMakeFiles/format_string_using_library.dir/src/format_string_using_library.cpp.o -c /Users/arvid/Documents/workspace/cpp-goof/src/format_string_using_library.cpp",
+  "file": "/Users/arvid/Documents/workspace/cpp-goof/src/format_string_using_library.cpp",
+  "output": "CMakeFiles/format_string_using_library.dir/src/format_string_using_library.cpp.o"
 }
 ]

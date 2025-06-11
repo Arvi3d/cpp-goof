@@ -13,7 +13,8 @@ find_package(OpenSSL REQUIRED)
 # set(CMAKE_TOOLCHAIN_FILE ${CMAKE_BINARY_DIR}/conan_toolchain.cmake) # This line is commented out
 
 # Add source files as libraries to test analysis between Translation Units
-# add_library(buffer_overflow_library src/buffer_overflow_library.cpp)
+add_library(format_string_library src/lib/format_string.cpp)
+add_library(integer_division_lib src/lib/integer_division.cpp)
 
 # Add source files as executables (assuming they are in the project root)
 
@@ -46,12 +47,15 @@ add_executable(division_zero_int src/division_zero_int.cpp)
 add_executable(division_zero_double src/division_zero_double.cpp)
 add_executable(cryptography_hardcoded_iv src/cryptography_hardcoded_iv.cpp)
 add_executable(cryptography_ecb_mode src/cryptography_ecb_mode.cpp)
+add_executable(format_string_using_library src/format_string_using_library.cpp)
 target_link_libraries(sql_injection PRIVATE SQLite::SQLite3) # Link to SQLite
 target_link_libraries(concurrency_race_condition PRIVATE Threads::Threads)
 target_link_libraries(concurrency_deadlock PRIVATE Threads::Threads)
 target_link_libraries(concurrency_atomicity_violation PRIVATE Threads::Threads)
 target_link_libraries(cryptography_hardcoded_iv PRIVATE OpenSSL::SSL OpenSSL::Crypto)
 target_link_libraries(cryptography_ecb_mode PRIVATE OpenSSL::SSL OpenSSL::Crypto)
+target_link_libraries(format_string_using_library PRIVATE format_string_library)
+target_link_libraries(division_zero_int PRIVATE integer_division_lib)
 
 # Optional: If you want to link libraries, you can use target_link_libraries()
 # Example: target_link_libraries(my_executable PRIVATE my_library)
