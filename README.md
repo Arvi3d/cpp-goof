@@ -4,10 +4,14 @@ Purposely vulnerable repository in C/C++ (testing purpose)
 Folder `src` contains the source code of the repository with multiple vulnerabilities.
 Each file contains an explanation, example, and mitigation strategy.
 
-Some vulnerabilities are found by Snyk, some by Clang Static Analyzer and few by both.
-There are also some vulnerabilities that are not detected by either tool or detected by mistake. 
+Full list of found vulnerabilities:
+ - [Snyk Code](https://app.eu.snyk.io/org/code/project/944d1d2c-20a4-4890-9287-eb06f4ef5fbe)
+ - [Clang Static Analyzer](csa-results/scan-build-2025-06-11-09-33-38-331106-oufkiuvc/index.html)
 
-## Vulnerability Summary Table
+## Issue comparison
+
+Some issues are found by Snyk, some by Clang Static Analyzer and few by both.
+There are also some vulnerabilities that are not detected by either tool or detected by mistake. 
 
 | Issue                                  | Snyk | CSA |
 | :------------------------------------- | :--- | :-- |
