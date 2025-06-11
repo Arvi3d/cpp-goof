@@ -1,15 +1,15 @@
 [
 {
   "directory": "/Users/arvid/Documents/workspace/cpp-goof/build",
-  "command": "/usr/bin/c++   -std=gnu++17 -arch arm64 -o CMakeFiles/format_string_library.dir/src/lib/format_string.cpp.o -c /Users/arvid/Documents/workspace/cpp-goof/src/lib/format_string.cpp",
-  "file": "/Users/arvid/Documents/workspace/cpp-goof/src/lib/format_string.cpp",
-  "output": "CMakeFiles/format_string_library.dir/src/lib/format_string.cpp.o"
+  "command": "/usr/bin/c++   -std=gnu++17 -arch arm64 -o CMakeFiles/format_string_library.dir/src/utils/format_string.cpp.o -c /Users/arvid/Documents/workspace/cpp-goof/src/utils/format_string.cpp",
+  "file": "/Users/arvid/Documents/workspace/cpp-goof/src/utils/format_string.cpp",
+  "output": "CMakeFiles/format_string_library.dir/src/utils/format_string.cpp.o"
 },
 {
   "directory": "/Users/arvid/Documents/workspace/cpp-goof/build",
-  "command": "/usr/bin/c++   -std=gnu++17 -arch arm64 -o CMakeFiles/integer_division_lib.dir/src/lib/integer_division.cpp.o -c /Users/arvid/Documents/workspace/cpp-goof/src/lib/integer_division.cpp",
-  "file": "/Users/arvid/Documents/workspace/cpp-goof/src/lib/integer_division.cpp",
-  "output": "CMakeFiles/integer_division_lib.dir/src/lib/integer_division.cpp.o"
+  "command": "/usr/bin/c++   -std=gnu++17 -arch arm64 -o CMakeFiles/integer_division_lib.dir/src/utils/integer_division.cpp.o -c /Users/arvid/Documents/workspace/cpp-goof/src/utils/integer_division.cpp",
+  "file": "/Users/arvid/Documents/workspace/cpp-goof/src/utils/integer_division.cpp",
+  "output": "CMakeFiles/integer_division_lib.dir/src/utils/integer_division.cpp.o"
 },
 {
   "directory": "/Users/arvid/Documents/workspace/cpp-goof/build",
